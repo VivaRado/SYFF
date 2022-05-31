@@ -341,14 +341,14 @@ The project's <strong>Work Plan / Project Plan</strong> is created outlining the
 </ul>
 <hr/>
 <h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Syntax / Blocks</strong></h3>
-<h4>Initial Letter Definitions</h4>
+<h4>Initial Letter Definitions####</h4>
 <pre><span></span><code class="codehilite css"><span class="nt">Π</span> <span class="p">{</span>
 
     <span class="n">out</span><span class="p">:</span> <span class="s2">"P_i"</span><span class="p">;</span>
 
 <span class="p">}</span>
 </code></pre>
-<h4>Synthesized Letter Definitions</h4>
+<h4>Synthesized Letter Definitions####</h4>
 <pre><span></span><code class="codehilite css"><span class="c">/* produced (character) [ receiving (character) = "name, unicode" ] */</span>
 
 <span class="nt">Ш</span> <span class="o">[</span> <span class="nt">Π</span> <span class="o">=</span> <span class="s2">"uni0428, 0428"</span> <span class="o">]</span> <span class="p">{</span>
@@ -420,7 +420,7 @@ The project's <strong>Work Plan / Project Plan</strong> is created outlining the
 <span class="p">}</span>
 </code></pre>
 <p><br/></p>
-<h4>Transform Translate Function:</h4>
+<h4>Transform Translate Function:####</h4>
 <pre><span></span><code class="codehilite css"><span class="nt">transform</span><span class="o">:</span> <span class="nt">translate</span><span class="o">(</span><span class="s2">"partial_name"</span><span class="o">,</span> <span class="nt">X</span><span class="o">,</span> <span class="nt">Y</span><span class="o">);</span>
 <span class="nt">transform</span><span class="o">:</span> <span class="nt">translate</span><span class="o">(</span><span class="nt">X</span><span class="o">,</span> <span class="nt">Y</span><span class="o">);</span>
 
@@ -440,7 +440,7 @@ The project's <strong>Work Plan / Project Plan</strong> is created outlining the
 <span class="p">}</span>
 </code></pre>
 <p><br/></p>
-<h4>Transform Mirror Function:</h4>
+<h4>Transform Mirror Function:####</h4>
 <pre><span></span><code class="codehilite css"><span class="nt">transform</span><span class="o">:</span> <span class="nt">mirrorX</span><span class="o">();</span>
 <span class="nt">transform</span><span class="o">:</span> <span class="nt">mirrorY</span><span class="o">(</span><span class="s2">"hand_copy"</span><span class="o">);</span>
 
@@ -469,7 +469,7 @@ The project's <strong>Work Plan / Project Plan</strong> is created outlining the
 <span class="p">}</span>
 </code></pre>
 <p><br/></p>
-<h4>Transform Fontex Function:</h4>
+<h4>Transform Fontex Function:####</h4>
 <pre><span></span><code class="codehilite css"><span class="nt">transform</span><span class="o">:</span> <span class="nt">fontex</span><span class="o">(</span><span class="s2">"type"</span><span class="o">,</span><span class="s2">"position"</span><span class="o">,</span> <span class="nt">X</span><span class="o">,</span> <span class="nt">Y</span><span class="o">);</span>
 
 <span class="o">&lt;</span><span class="nt">transform</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">fontex</span><span class="o">(</span> <span class="o">&lt;</span><span class="nt">type-string</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="nt">position-string</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="nt">number</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="nt">number</span><span class="o">&gt;</span> <span class="o">)</span>
@@ -512,22 +512,22 @@ The project's <strong>Work Plan / Project Plan</strong> is created outlining the
 <span class="p">}</span>
 </code></pre>
 <p><br/></p>
-<h4>Partial Keep Function:</h4>
+<h4>Partial Keep Function:####</h4>
 <pre><span></span><code class="codehilite css"><span class="nt">partial</span><span class="o">:</span> <span class="nt">keep</span><span class="o">(</span><span class="s2">"partial_a"</span><span class="o">,</span> <span class="s2">"partial_b"</span><span class="o">);</span>
 
 <span class="o">&lt;</span><span class="nt">partial</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">keep</span><span class="o">(</span> <span class="o">[&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;</span> <span class="o">,</span> <span class="o">&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;,</span> <span class="o">...]</span> <span class="o">)</span>
 </code></pre>
-<h4>Partial Remove Function:</h4>
+<h4>Partial Remove Function:####</h4>
 <pre><span></span><code class="codehilite css"><span class="nt">partial</span><span class="o">:</span> <span class="nt">remove</span><span class="o">(</span><span class="s2">"partial_b"</span><span class="o">);</span>
 
 <span class="o">&lt;</span><span class="nt">partial</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">remove</span><span class="o">(</span> <span class="o">[&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;</span> <span class="o">,</span> <span class="o">&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;,</span> <span class="o">...]</span> <span class="o">)</span>
 </code></pre>
-<h4>Partial Get Function:</h4>
+<h4>Partial Get Function:####</h4>
 <pre><span></span><code class="codehilite css"><span class="nt">partial</span><span class="o">:</span> <span class="nt">get</span><span class="o">(</span><span class="s2">"Π"</span><span class="o">,</span><span class="s2">"partial_a"</span><span class="o">,</span><span class="s2">"partial_a_rename"</span><span class="o">);</span>
 
 <span class="o">&lt;</span><span class="nt">partial</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">get</span><span class="o">(</span> <span class="o">&lt;</span><span class="nt">letter-name-string</span><span class="o">&gt;</span> <span class="o">,</span> <span class="o">&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="nt">partial-new-name-string</span><span class="o">&gt;</span> <span class="o">)</span>
 </code></pre>
-<h4>Partial Copy Function:</h4>
+<h4>Partial Copy Function:####</h4>
 <pre><span></span><code class="codehilite css"><span class="nt">partial</span><span class="o">:</span> <span class="nt">copy</span><span class="o">(</span><span class="s2">"partial_a"</span><span class="o">);</span>
 
 <span class="o">&lt;</span><span class="nt">partial</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">copy</span><span class="o">(</span> <span class="o">&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="nt">partial-new-name-string</span><span class="o">&gt;?</span> <span class="o">)</span>
@@ -535,7 +535,7 @@ The project's <strong>Work Plan / Project Plan</strong> is created outlining the
 <p><br/></p>
 <hr/>
 <h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Examples</strong></h3>
-<h4>E to F to Γ to T</h4>
+<h4>E to F to Γ to T####</h4>
 <p>Here is an example of the letter E becoming F, then Γ and T. The first point of each part of this letter have a piece of code in the name definition that allows us access with SYFF.</p>
 <p><br/></p>
 <pre><span></span><code class="codehilite fontex">{type:part,position:hand}

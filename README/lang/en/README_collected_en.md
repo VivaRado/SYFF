@@ -154,7 +154,7 @@ For the sake of simplicity we will only present the following phases:
 ### **Introduction / Phase Introduction / Initiation Phase / Business Case**
 
 
-####We want to get lots of letters from a few, by running recombining and altering functions whose instructions look like CSS.####
+#### We want to get lots of letters from a few, by running recombining and altering functions whose instructions look like CSS. ####
 
 While working with Advent the Variable variant, we noticed the multiplicity of instances that makes variable fonts great, is exactly what bores the human as a function has to be repeated across all of them. We decided to test a few functions that would take a set of initial letters and twist and stretch them to the point of creating the whole capital letter encoding of three languages, and [here is the initial plan for that.](), since the script we call "recombination" was reusing letters after some functions where applied to them or cascading, a floating idea was to also make these instructions more approachable to the designer by making them appear similar to CSS.
 
@@ -347,7 +347,8 @@ BUMP
 
 
 
-####Initial Letter Definitions####
+#### Initial Letter Definitions#### 
+
 
 ```css
 
@@ -360,7 +361,9 @@ BUMP
 
 ```
 
-####Synthesized Letter Definitions####
+
+#### Synthesized Letter Definitions#### 
+
 
 
 ```css
@@ -474,7 +477,7 @@ A [ B = "name, unicode" ] {
 
 <br>
 
-####Transform Translate Function:####
+#### Transform Translate Function:#### 
 
 ```css
 transform: translate("partial_name", X, Y);
@@ -507,7 +510,7 @@ A [ B = "name, unicode" ] {
 ```
 <br>
 
-####Transform Mirror Function:####
+#### Transform Mirror Function:#### 
 
 ```css
 transform: mirrorX();
@@ -562,7 +565,7 @@ A [ B = "name, unicode" ] {
 <br>
 
 
-####Transform Fontex Function:####
+#### Transform Fontex Function:#### 
 
 ```css
 transform: fontex("type","position", X, Y);
@@ -628,7 +631,7 @@ A [ B = "name, unicode" ] {
 
 <br>
 
-####Partial Keep Function:####
+#### Partial Keep Function:#### 
 
 ```css
 partial: keep("partial_a", "partial_b");
@@ -637,7 +640,7 @@ partial: keep("partial_a", "partial_b");
 
 ```
 
-####Partial Remove Function:####
+#### Partial Remove Function:#### 
 
 ```css
 partial: remove("partial_b");
@@ -646,7 +649,7 @@ partial: remove("partial_b");
 
 ```
 
-####Partial Get Function:####
+#### Partial Get Function:#### 
 
 ```css
 partial: get("Π","partial_a","partial_a_rename");
@@ -655,7 +658,7 @@ partial: get("Π","partial_a","partial_a_rename");
 
 ```
 
-####Partial Copy Function:####
+#### Partial Copy Function:#### 
 
 ```css
 partial: copy("partial_a");
@@ -673,7 +676,7 @@ partial: copy("partial_a");
 
 ### **Introduction / Phase Introduction / Planning Phase / Project Plan / Examples**
 
-####E to F to Γ to T####
+#### E to F to Γ to T#### 
 
 Here is an example of the letter E becoming F, then Γ and T. The first point of each part of this letter have a piece of code in the name definition that allows us access with SYFF.
 
@@ -830,7 +833,7 @@ SYFF will be delivered in this repository.
 ### **Introduction / Phase Introduction / Planning Phase / Project Plan / Usage**
 
 
-#### **To apply the SYFF:**
+####  **To apply the SYFF:**
 
 Planned:
 
