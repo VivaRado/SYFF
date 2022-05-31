@@ -349,6 +349,7 @@ BUMP
 
 ####Initial Letter Definitions####
 
+
 ```css
 
 Π {
@@ -360,7 +361,9 @@ BUMP
 
 ```
 
+
 ####Synthesized Letter Definitions####
+
 
 
 ```css
