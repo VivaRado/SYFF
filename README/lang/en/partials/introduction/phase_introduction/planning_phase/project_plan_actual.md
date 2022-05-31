@@ -44,7 +44,7 @@ BUMP
 
 
 
-#### Initial Letter Definitions #### 
+#### Initial Letter Definitions:
 
 
 ```css
@@ -59,7 +59,7 @@ BUMP
 ```
 
 
-#### Synthesized Letter Definitions #### 
+#### Synthesized Letter Definitions:
 
 
 
@@ -174,7 +174,7 @@ A [ B = "name, unicode" ] {
 
 <br>
 
-#### Transform Translate Function: #### 
+#### Transform Translate Function:
 
 ```css
 transform: translate("partial_name", X, Y);
@@ -207,7 +207,7 @@ A [ B = "name, unicode" ] {
 ```
 <br>
 
-#### Transform Mirror Function: #### 
+#### Transform Mirror Function:
 
 ```css
 transform: mirrorX();
@@ -262,7 +262,7 @@ A [ B = "name, unicode" ] {
 <br>
 
 
-#### Transform Fontex Function: #### 
+#### Transform Fontex Function:
 
 ```css
 transform: fontex("type","position", X, Y);
@@ -328,7 +328,7 @@ A [ B = "name, unicode" ] {
 
 <br>
 
-#### Partial Keep Function: #### 
+#### Partial Keep Function:
 
 ```css
 partial: keep("partial_a", "partial_b");
@@ -337,7 +337,7 @@ partial: keep("partial_a", "partial_b");
 
 ```
 
-#### Partial Remove Function: #### 
+#### Partial Remove Function:
 
 ```css
 partial: remove("partial_b");
@@ -346,7 +346,7 @@ partial: remove("partial_b");
 
 ```
 
-#### Partial Get Function: #### 
+#### Partial Get Function:
 
 ```css
 partial: get("Π","partial_a","partial_a_rename");
@@ -355,7 +355,7 @@ partial: get("Π","partial_a","partial_a_rename");
 
 ```
 
-#### Partial Copy Function: #### 
+#### Partial Copy Function:
 
 ```css
 partial: copy("partial_a");
