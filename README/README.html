@@ -1,0 +1,862 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+		<title>VRD | SYFF | 1.006 | 2022/05/31</title>
+		<link rel="icon" href="assets/media/thumb.ico">
+		<link rel="stylesheet" type="text/css" href="assets/css/fface.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/code_native.css">
+		<script type="text/javascript" src="assets/js/mermaid.js"></script>
+		<script type="text/javascript" src="assets/js/jq.js"></script>
+		
+		<script type="text/javascript" src="assets/js/webfont.js"></script>
+		<script type="text/javascript" src="assets/js/snap.svg-min.js"></script>
+		<script type="text/javascript" src="assets/js/raphael.min.js"></script>
+		<script type="text/javascript" src="assets/js/underscore-min.js"></script>
+		<script type="text/javascript" src="assets/js/sequence-diagram.js"></script>
+		<script type="text/javascript" src="assets/js/flowchart.js"></script>
+		<script type="text/javascript" src="assets/js/script.js"></script>
+	</head>
+	<body class="markdown">
+		<article class="markdown-body" id="body"><div data-language="en"><h2><strong>Preface</strong></h2>
+<p><strong>SYFF</strong> (Synthetic Font Functions), IPA: [/saɪff/ &gt;= /sɪff/], is an Open Source project of <strong>VivaRado</strong>, Think of it as CSS but for fonts.</p>
+<div class="header_logo">
+<p><img alt="Screenshot" src="assets/media/SYFF_logo.png"/></p>
+</div>
+<div class="sidebar">
+<h3><strong>Contents</strong></h3>
+<ol>
+<li><strong>Preface</strong></li>
+<li><strong>Introduction</strong>
+<ol>
+<li><strong>Profile</strong></li>
+<li><strong>Project Overview</strong></li>
+<li><strong>Organisational Documents</strong></li>
+<li><strong>Phase Introduction</strong>
+<ol>
+<li><strong>Initiation Phase</strong>
+<ol>
+<li><strong>Business Case</strong>
+<ol>
+<li><strong>Strategic case</strong></li>
+<li><strong>Management case</strong>
+<ol>
+<li><strong>Achievements Plan</strong></li>
+</ol></li>
+</ol></li>
+<li><strong>Project Charter</strong>
+<ol>
+<li><strong>Project Introduction</strong>
+<ol>
+<li><strong>Project Statements</strong></li>
+</ol></li>
+<li><strong>Project Goals</strong></li>
+<li><strong>Deliverables</strong></li>
+<li><strong>Duration</strong></li>
+</ol></li>
+</ol></li>
+<li><strong>Planning Phase</strong>
+<ol>
+<li><strong>Project Plan</strong>
+<ol>
+<li><strong>Design</strong></li>
+<li><strong>Production</strong></li>
+<li><strong>Syntax</strong>
+<ol>
+<li><strong>Blocks</strong></li>
+<li><strong>Instance Query</strong></li>
+</ol></li>
+<li><strong>Alteration Functions</strong>
+<ol>
+<li><strong>Copy</strong></li>
+<li><strong>Translate</strong></li>
+<li><strong>Mirror</strong></li>
+<li><strong>Fontex</strong></li>
+<li><strong>Partial</strong></li>
+</ol></li>
+<li><strong>Examples</strong></li>
+<li><strong>Delivery</strong></li>
+<li><strong>Usage</strong></li>
+</ol></li>
+<li><strong>Work Plan</strong>
+<ol>
+<li><strong>Task Assignments</strong></li>
+<li><strong>Dependencies</strong></li>
+</ol></li>
+<li><strong>Schedule Plan</strong>
+<ol>
+<li><strong>Timeline</strong></li>
+</ol></li>
+<li><strong>Stakeholders</strong>
+<ol>
+<li><strong>Personnel Plan</strong></li>
+<li><strong>Communication Plan</strong></li>
+</ol></li>
+<li><strong>Quality Plan</strong>
+<ol>
+<li><strong>Quality Targets</strong></li>
+<li><strong>Quality Management</strong></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol>
+<h3>Glossary</h3>
+<ol>
+<li><strong>Glossary</strong></li>
+</ol>
+<h3>Reference</h3>
+<ol>
+<li><strong>Reference</strong></li>
+</ol>
+</div>
+<h2><strong>Introduction</strong></h2>
+<p>SYFF (Synthetic Font Functions) is a set of cascading functions that recombine and alter a set of initially provided letters to create new letters.</p>
+<h4>Contributors:</h4>
+<ul>
+<li>VivaRado <a href="mailto:support@vivarado.com" rel="noopener" target="_blank">support@vivarado.com</a></li>
+<li>Andreas Kalpakidis</li>
+<li>Madina Akhmatova</li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Profile</strong></h3>
+<ul>
+<li>Company: VivaRado LLP</li>
+<li>Designer: Andreas Kalpakidis</li>
+<li>Twitter: <a href="https://twitter.com/VivaRado" rel="noopener" target="_blank">@vivarado</a></li>
+<li>Google Group:<a href="https://groups.google.com/a/vivarado.com/forum/#!forum/typography" rel="noopener" target="_blank">VivaRado Typography Google Group</a></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Project Overview</strong></h3>
+<ul>
+<li>Project Name: SYFF (Synthetic Font Functions)</li>
+<li>Code Name: Recombinator</li>
+<li>Test Type Family: Aeolus</li>
+<li>Proposal Date: 28/05/2022</li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Organisational Documents</strong></h3>
+<p>Documentation Types:</p>
+<ul>
+<li>HTML - Responsive preview in HTML format - At README directory</li>
+<li>Standard Repository README - At the root of the repository</li>
+<li>PDF - At the root of the repository</li>
+</ul>
+<p>Features:</p>
+<ul>
+<li>Responsive Interface</li>
+<li>Synchronized Sidebar</li>
+<li>Hashtag Navigation</li>
+<li>PDF with TOC and Cover</li>
+<li>Multilingual Publishing</li>
+</ul>
+<p>Drawbacks:</p>
+<ul>
+<li>Monospace font used in PDF due to kerning issues.</li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction</strong></h3>
+<p>For the sake of simplicity we will only present the following phases:</p>
+<ul>
+<li>Initiation Phase</li>
+<li>Planning Phase</li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Initiation Phase</strong></h3>
+<ul>
+<li><p><strong>Initiation Phase</strong> Components ∞0.001:</p>
+<ol>
+<li><strong>Business Case</strong>:
+<ul>
+<li>Strategic case </li>
+<li>Management case</li>
+</ul></li>
+</ol></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Initiation Phase / Business Case</strong></h3>
+<h4>We want to get lots of letters from a few, by running recombining and altering functions whose instructions look like CSS.</h4>
+<p>While working with Advent the Variable variant, we noticed the multiplicity of instances that makes variable fonts great, is exactly what bores the human as a function has to be repeated across all of them. We decided to test a few functions that would take a set of initial letters and twist and stretch them to the point of creating the whole capital letter encoding of three languages, and <a href="">here is the initial plan for that.</a>, since the script we call "recombination" was reusing letters after some functions where applied to them or cascading, a floating idea was to also make these instructions more approachable to the designer by making them appear similar to CSS.</p>
+<ul>
+<li><strong>Business Case</strong> Components ∞0.001:
+<ol>
+<li><strong>Strategic case</strong></li>
+<li><strong>Management case</strong>
+<ul>
+<li>Achievability</li>
+</ul></li>
+</ol></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Initiation Phase / Business Case / Strategic case</strong></h3>
+<p>The ability to have a set of simple looking instructions that reduce the repetitive nature of letters would increase the time spent on actually designing the look of the font and improve the time it takes to increase linguistic coverage and deploy the font. Most importantly you can still meddle with your font after the scripts are done doing what you told them.</p>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Initiation Phase / Business Case / Management case</strong></h3>
+<p>The management case tests the feasibility of the preferred option, in terms of its deliverability within various tolerances. </p>
+<h4>Achievability:</h4>
+<p>We have been working with editing fonts with code for a few years now and much of the code and font plumbing existed from projects like <a href="https://github.com/VivaRado/variomatic" rel="noopener" target="_blank">Variomatic</a> or <a href="https://github.com/VivaRado/VRD-Typography-Library" rel="noopener" target="_blank">VRD TYPL</a>, the one piece we needed was to make the otherwise complicated list of instructions inside the recombination script, a little more readable and implement a CSS like parser, for that we chose to harvest CSSUtils code.</p>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Initiation Phase / Business Case / Management case / Achievements Plan</strong></h3>
+<ol>
+<li><strong>Milestones</strong>
+<ol>
+<li>Recombination Script</li>
+<li>Synthetic Font Functions (SYFF Parsing)</li>
+</ol></li>
+<li><strong>Dependencies</strong>
+<ol>
+<li>In Lib</li>
+</ol></li>
+<li><strong>Skillset Requirements</strong>
+<ol>
+<li>Variable Font comprehension.</li>
+<li>Python Programming</li>
+<li>Web Application Development</li>
+<li>Type Design</li>
+<li>2D Vector Math</li>
+</ol></li>
+</ol>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Initiation Phase / Project Charter</strong></h3>
+<ul>
+<li><strong>Project Charter</strong> Components ∞0.001:
+<ul>
+<li>Project Introduction</li>
+<li>Project Goals</li>
+<li>Deliverables</li>
+<li>Duration</li>
+</ul></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Initiation Phase / Project Charter / Project Introduction</strong></h3>
+<ul>
+<li><p><strong>Project Introduction</strong> Components ∞0.001:</p>
+<ul>
+<li>Project Statements
+<ul>
+<li>Vision Statement</li>
+<li>Mission Statement</li>
+</ul></li>
+<li>Project Definition
+<ul>
+<li>Problem </li>
+<li>Opportunity</li>
+</ul></li>
+</ul></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Initiation Phase / Project Charter / Project Introduction / Project Statements</strong></h3>
+<h4>Vision Statement:</h4>
+<p>To make SYFF (Synthetic Font Functions) a viable tool in the belt of the type designer.</p>
+<h4>Mission Statement:</h4>
+<p>To make the idea of using SYFF (Synthetic Font Functions) functions the norm during font development and design.</p>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Initiation Phase / Project Charter / Project Goals</strong></h3>
+<ul>
+<li>Goals for ∞ 1.00:
+<ul>
+<li>Cascading recombining functions</li>
+<li>SYFF Parsing
+<ul>
+<li>Media Query Defined Instance</li>
+</ul></li>
+<li>Basic Alterations:
+<ul>
+<li>Copy</li>
+<li>Transform</li>
+<li>Mirror</li>
+<li>Fontex</li>
+<li>Partial</li>
+</ul></li>
+</ul></li>
+<li>Goals for ∞ 2.00:
+<ul>
+<li>Add to Alterations</li>
+</ul></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Initiation Phase / Project Charter / Deliverables</strong></h3>
+<ul>
+<li><strong>Deliverables</strong> Components ∞0.001:
+<ul>
+<li>SYFF (Synthetic Font Functions)</li>
+<li>Aeolus Font</li>
+</ul></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Initiation Phase / Project Charter / Duration</strong></h3>
+<ul>
+<li><p><strong>Duration</strong> of SYFF ∞1.00:</p>
+<ul>
+<li>01/04/2022 to 31/05/2022.</li>
+</ul></li>
+<li><p><strong>Duration</strong> of SYFF ∞2.00:</p>
+<ul>
+<li>Stakeholder Decision Pending.</li>
+</ul></li>
+<li><p><strong>Duration</strong> of Aeolus ∞1.00:</p>
+<ul>
+<li>Depends on SYFF ∞1.00.</li>
+</ul></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase</strong></h3>
+<p>The Planning Phase, is where the project solution is further developed in as much detail as possible and the steps necessary to meet the project’s objectives.
+The project's <strong>Work Plan / Project Plan</strong> is created outlining the activities, tasks, dependencies, and timeframes.</p>
+<p>The Planning Phase consists of:</p>
+<ol>
+<li><strong>Project Plan</strong>:</li>
+<li><strong>Work Plan</strong>:</li>
+<li><strong>Schedule Plan</strong>:</li>
+<li><strong>Stakeholders</strong></li>
+<li><strong>Quality Plan (PQP)</strong></li>
+</ol>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan</strong></h3>
+<p>Decide on the encoding sets and supported language scripts. Decide and plan the weights and how you will generate each weight. Understand the procedures and steps. Calculate or keep track of timelines, steps procedures and pitfalls.</p>
+<ol>
+<li><strong>Project Plan</strong> Components ∞0.001:
+<ol>
+<li><strong>Design</strong></li>
+<li><strong>Production</strong></li>
+<li><strong>Alteration Functions</strong></li>
+</ol></li>
+</ol>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Design</strong></h3>
+<p>BUMP</p>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Production</strong></h3>
+<p>BUMP</p>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Syntax</strong></h3>
+<ul>
+<li><p>The selector represents to the letter you want to create and the attribute in the square brackets represents the source of that letter.</p></li>
+<li><p>The declaration block contains one or more declarations separated by semicolons.</p></li>
+<li><p>Each declaration includes a SYFF property name and a value, separated by a colon.</p></li>
+<li><p>Multiple SYFF declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.</p></li>
+<li><p>SYFF selectors outside of Instance Queries, apply to all the instances of a given font. Selectors inside Instance Queries apply to specific instances of the font, like Media Queries with devices or sizes.</p></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Syntax / Blocks</strong></h3>
+<h4>Initial Letter Definitions</h4>
+<pre><span></span><code class="codehilite css"><span class="nt">Π</span> <span class="p">{</span>
+
+    <span class="n">out</span><span class="p">:</span> <span class="s2">"P_i"</span><span class="p">;</span>
+
+<span class="p">}</span>
+</code></pre>
+<h4>Synthesized Letter Definitions</h4>
+<pre><span></span><code class="codehilite css"><span class="c">/* produced (character) [ receiving (character) = "name, unicode" ] */</span>
+
+<span class="nt">Ш</span> <span class="o">[</span> <span class="nt">Π</span> <span class="o">=</span> <span class="s2">"uni0428, 0428"</span> <span class="o">]</span> <span class="p">{</span>
+
+    <span class="k">transform</span><span class="p">:</span> <span class="nf">fontex</span><span class="p">(</span><span class="s2">"width"</span><span class="p">,</span><span class="s2">"right"</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="k">transform</span><span class="p">:</span> <span class="nf">mirrorX</span><span class="p">();</span>
+
+<span class="p">}</span>
+</code></pre>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Syntax / Instance Query</strong></h3>
+<p>SYFF selectors outside of Instance Queries, apply to all the instances of a given font. Selectors inside Instance Queries apply to specific instances of the font, like Media Queries and devices or sizes.</p>
+<p><br/></p>
+<pre><span></span><code class="codehilite css"><span class="c">/* Define the existing letter */</span>
+
+<span class="nt">A</span> <span class="p">{</span>
+
+    <span class="n">out</span><span class="p">:</span> <span class="s2">"A_lpha"</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+
+<span class="c">/* Translate -50 for all instances */</span>
+
+<span class="nt">Α</span> <span class="o">[</span> <span class="nt">A</span> <span class="o">=</span> <span class="s2">"Alpha, 0391"</span> <span class="o">]</span> <span class="p">{</span>
+
+    <span class="k">transform</span><span class="p">:</span> <span class="nb">translate</span><span class="p">(</span><span class="mi">-50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="p">}</span>
+
+
+<span class="p">@</span><span class="k">instance</span> <span class="o">(</span><span class="s2">"bold"</span><span class="o">)</span> <span class="p">{</span>
+
+    <span class="c">/* Translate another -20 for only bold instance */</span>
+
+    <span class="nt">Α</span> <span class="o">[</span> <span class="nt">A</span> <span class="o">=</span> <span class="s2">"Alpha, 0391"</span> <span class="o">]</span> <span class="p">{</span>
+
+        <span class="k">transform</span><span class="p">:</span> <span class="nb">translate</span><span class="p">(</span><span class="mi">-20</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Alteration Functions</strong></h3>
+<p>Review and document the Alteration Functions:</p>
+<ul>
+<li>Copy</li>
+<li>Transform</li>
+<li>Mirror</li>
+<li>Fontex</li>
+<li>Partial</li>
+</ul>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Alteration Functions / Copy</strong></h3>
+<p>The definition of a SYFF rule is a copy function.</p>
+<p><br/></p>
+<pre><span></span><code class="codehilite css"><span class="nt">A</span> <span class="o">[</span> <span class="nt">B</span> <span class="o">=</span> <span class="s2">"name, unicode"</span> <span class="o">]</span> <span class="p">{}</span>
+</code></pre>
+<p><br/></p>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Alteration Functions / Translate</strong></h3>
+<p>Translate a partial or the whole letter.</p>
+<p><br/></p>
+<pre><span></span><code class="codehilite css"><span class="nt">A</span> <span class="o">[</span> <span class="nt">B</span> <span class="o">=</span> <span class="s2">"name, unicode"</span> <span class="o">]</span> <span class="p">{</span>
+
+    <span class="k">transform</span><span class="p">:</span> <span class="nb">translate</span><span class="p">(</span><span class="s2">"partial_name"</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">);</span>
+    <span class="k">transform</span><span class="p">:</span> <span class="nb">translate</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">);</span>
+
+<span class="p">}</span>
+</code></pre>
+<p><br/></p>
+<h4>Transform Translate Function:</h4>
+<pre><span></span><code class="codehilite css"><span class="nt">transform</span><span class="o">:</span> <span class="nt">translate</span><span class="o">(</span><span class="s2">"partial_name"</span><span class="o">,</span> <span class="nt">X</span><span class="o">,</span> <span class="nt">Y</span><span class="o">);</span>
+<span class="nt">transform</span><span class="o">:</span> <span class="nt">translate</span><span class="o">(</span><span class="nt">X</span><span class="o">,</span> <span class="nt">Y</span><span class="o">);</span>
+
+<span class="o">&lt;</span><span class="nt">transform</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">translate</span><span class="o">(</span> <span class="o">&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;?,</span> <span class="o">&lt;</span><span class="nt">number</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="nt">number</span><span class="o">&gt;</span>  <span class="o">)</span>
+</code></pre>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Alteration Functions / Mirror</strong></h3>
+<p>Mirror a partial or the whole letter.</p>
+<p><br/></p>
+<pre><span></span><code class="codehilite css"><span class="nt">A</span> <span class="o">[</span> <span class="nt">B</span> <span class="o">=</span> <span class="s2">"name, unicode"</span> <span class="o">]</span> <span class="p">{</span>
+
+    <span class="k">transform</span><span class="p">:</span> <span class="nf">mirrorX</span><span class="p">();</span>
+    <span class="k">transform</span><span class="p">:</span> <span class="nf">mirrorX</span><span class="p">(</span> <span class="s2">"hand_copy"</span> <span class="p">);</span>
+    <span class="k">transform</span><span class="p">:</span> <span class="nf">mirrorY</span><span class="p">();</span>
+    <span class="k">transform</span><span class="p">:</span> <span class="nf">mirrorY</span><span class="p">(</span> <span class="s2">"hand_copy"</span> <span class="p">);</span>
+
+<span class="p">}</span>
+</code></pre>
+<p><br/></p>
+<h4>Transform Mirror Function:</h4>
+<pre><span></span><code class="codehilite css"><span class="nt">transform</span><span class="o">:</span> <span class="nt">mirrorX</span><span class="o">();</span>
+<span class="nt">transform</span><span class="o">:</span> <span class="nt">mirrorY</span><span class="o">(</span><span class="s2">"hand_copy"</span><span class="o">);</span>
+
+<span class="o">&lt;</span><span class="nt">transform</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">mirrorX</span><span class="o">(</span> <span class="o">&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;?</span> <span class="o">)</span>
+<span class="o">&lt;</span><span class="nt">transform</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">mirrorY</span><span class="o">(</span> <span class="o">&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;?</span> <span class="o">)</span>
+</code></pre>
+<p><br/></p>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Alteration Functions / Fontex</strong></h3>
+<p>Fontex is defined as an instance like all the rest of the instances of your font, but it includes areas, instead of letters, defined by you for specific purposes.</p>
+<p><br/></p>
+<div class="img_narrow">
+<p><img alt="Screenshot" src="assets/media/P_i_fontex.svg"/></p>
+</div>
+<p><br/></p>
+<p>Here we can translate the points in the left width region.</p>
+<p><br/></p>
+<div class="img_narrow">
+<p><img alt="Screenshot" src="assets/media/P_i_fontex_translate.svg"/></p>
+</div>
+<p><br/></p>
+<pre><span></span><code class="codehilite css"><span class="nt">A</span> <span class="o">[</span> <span class="nt">B</span> <span class="o">=</span> <span class="s2">"name, unicode"</span> <span class="o">]</span> <span class="p">{</span>
+
+    <span class="k">transform</span><span class="p">:</span> <span class="nf">fontex</span><span class="p">(</span><span class="s2">"type"</span><span class="p">,</span><span class="s2">"position"</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">);</span>
+
+<span class="p">}</span>
+</code></pre>
+<p><br/></p>
+<h4>Transform Fontex Function:</h4>
+<pre><span></span><code class="codehilite css"><span class="nt">transform</span><span class="o">:</span> <span class="nt">fontex</span><span class="o">(</span><span class="s2">"type"</span><span class="o">,</span><span class="s2">"position"</span><span class="o">,</span> <span class="nt">X</span><span class="o">,</span> <span class="nt">Y</span><span class="o">);</span>
+
+<span class="o">&lt;</span><span class="nt">transform</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">fontex</span><span class="o">(</span> <span class="o">&lt;</span><span class="nt">type-string</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="nt">position-string</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="nt">number</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="nt">number</span><span class="o">&gt;</span> <span class="o">)</span>
+</code></pre>
+<p><br/></p>
+<p>Here is a GLIF with some areas defined by fontex, using these areas we can then manipulate the included points. Since fontex is tied to the first instance of your font, and we are dealing with a variable font, those points are at the same index and same partial across all other instances too.</p>
+<p>We can then use these fontex to move points and make letters wider or other detailing.</p>
+<p><br/></p>
+<pre><span></span><code class="codehilite xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;glyph</span> <span class="na">name=</span><span class="s">"Pi"</span> <span class="na">format=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;advance</span> <span class="na">width=</span><span class="s">"679"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;unicode</span> <span class="na">hex=</span><span class="s">"03A0"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;outline&gt;</span>
+    <span class="nt">&lt;contour&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"-25"</span> <span class="na">y=</span><span class="s">"-20"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="na">name=</span><span class="s">"{type:width,position:left}"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"152"</span> <span class="na">y=</span><span class="s">"-20"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"152"</span> <span class="na">y=</span><span class="s">"674"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"-25"</span> <span class="na">y=</span><span class="s">"674"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/contour&gt;</span>
+    <span class="nt">&lt;contour&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"385"</span> <span class="na">y=</span><span class="s">"-20"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="na">name=</span><span class="s">"{type:width,position:right}"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"562"</span> <span class="na">y=</span><span class="s">"-20"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"562"</span> <span class="na">y=</span><span class="s">"674"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"385"</span> <span class="na">y=</span><span class="s">"674"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/contour&gt;</span>
+  <span class="nt">&lt;/outline&gt;</span>
+<span class="nt">&lt;/glyph&gt;</span>
+</code></pre>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Alteration Functions / Partial</strong></h3>
+<p>You can divide your letter in partials which you can use across your other letters, you could also make one letter that includes all the partials you will need and then run the appropriate SYFF functions to create the whole font.</p>
+<p><br/></p>
+<pre><span></span><code class="codehilite css"><span class="nt">A</span> <span class="o">[</span> <span class="nt">B</span> <span class="o">=</span> <span class="s2">"name, unicode"</span> <span class="o">]</span> <span class="p">{</span>
+
+    <span class="n">partial</span><span class="p">:</span> <span class="nf">keep</span><span class="p">(</span><span class="s2">"partial_a"</span><span class="p">,</span> <span class="s2">"partial_b"</span><span class="p">);</span>
+    <span class="n">partial</span><span class="p">:</span> <span class="nf">remove</span><span class="p">(</span><span class="s2">"partial_b"</span><span class="p">);</span>
+    <span class="n">partial</span><span class="p">:</span> <span class="nf">get</span><span class="p">(</span><span class="s2">"Π"</span><span class="p">,</span><span class="s2">"partial_a"</span><span class="p">,</span><span class="s2">"partial_a_rename"</span><span class="p">);</span>
+    <span class="n">partial</span><span class="p">:</span> <span class="nf">copy</span><span class="p">(</span><span class="s2">"partial_a"</span><span class="p">);</span>
+
+<span class="p">}</span>
+</code></pre>
+<p><br/></p>
+<h4>Partial Keep Function:</h4>
+<pre><span></span><code class="codehilite css"><span class="nt">partial</span><span class="o">:</span> <span class="nt">keep</span><span class="o">(</span><span class="s2">"partial_a"</span><span class="o">,</span> <span class="s2">"partial_b"</span><span class="o">);</span>
+
+<span class="o">&lt;</span><span class="nt">partial</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">keep</span><span class="o">(</span> <span class="o">[&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;</span> <span class="o">,</span> <span class="o">&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;,</span> <span class="o">...]</span> <span class="o">)</span>
+</code></pre>
+<h4>Partial Remove Function:</h4>
+<pre><span></span><code class="codehilite css"><span class="nt">partial</span><span class="o">:</span> <span class="nt">remove</span><span class="o">(</span><span class="s2">"partial_b"</span><span class="o">);</span>
+
+<span class="o">&lt;</span><span class="nt">partial</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">remove</span><span class="o">(</span> <span class="o">[&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;</span> <span class="o">,</span> <span class="o">&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;,</span> <span class="o">...]</span> <span class="o">)</span>
+</code></pre>
+<h4>Partial Get Function:</h4>
+<pre><span></span><code class="codehilite css"><span class="nt">partial</span><span class="o">:</span> <span class="nt">get</span><span class="o">(</span><span class="s2">"Π"</span><span class="o">,</span><span class="s2">"partial_a"</span><span class="o">,</span><span class="s2">"partial_a_rename"</span><span class="o">);</span>
+
+<span class="o">&lt;</span><span class="nt">partial</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">get</span><span class="o">(</span> <span class="o">&lt;</span><span class="nt">letter-name-string</span><span class="o">&gt;</span> <span class="o">,</span> <span class="o">&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="nt">partial-new-name-string</span><span class="o">&gt;</span> <span class="o">)</span>
+</code></pre>
+<h4>Partial Copy Function:</h4>
+<pre><span></span><code class="codehilite css"><span class="nt">partial</span><span class="o">:</span> <span class="nt">copy</span><span class="o">(</span><span class="s2">"partial_a"</span><span class="o">);</span>
+
+<span class="o">&lt;</span><span class="nt">partial</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">copy</span><span class="o">(</span> <span class="o">&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="nt">partial-new-name-string</span><span class="o">&gt;?</span> <span class="o">)</span>
+</code></pre>
+<p><br/></p>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Examples</strong></h3>
+<h4>E to F to Γ to T</h4>
+<p>Here is an example of the letter E becoming F, then Γ and T. The first point of each part of this letter have a piece of code in the name definition that allows us access with SYFF.</p>
+<p><br/></p>
+<pre><span></span><code class="codehilite fontex">{type:part,position:hand}
+</code></pre>
+<p><br/></p>
+<p><br/></p>
+<div class="img_narrow">
+<p><img alt="Screenshot" src="assets/media/E_psilon_demo.svg"/></p>
+</div>
+<pre><span></span><code class="codehilite css"><span class="nt">Ε</span> <span class="p">{</span>
+
+    <span class="n">out</span><span class="p">:</span> <span class="s2">"E_psilon"</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+<span class="c">/* We create a new letter out of the Epsilon glyph */</span>
+
+<span class="nt">E</span> <span class="o">[</span> <span class="nt">Ε</span> <span class="o">=</span> <span class="s2">"E, 0045"</span> <span class="o">]</span> <span class="p">{}</span>
+
+<span class="c">/* </span>
+<span class="c">We create a new letter F and then use the partial function, </span>
+<span class="c">by keeping and removing the curved "leg" partial,</span>
+<span class="c">we need a new straight leg - stem for F and we can grab that from the letter I</span>
+<span class="c">*/</span>
+
+<span class="nt">F</span> <span class="o">[</span> <span class="nt">E</span> <span class="o">=</span> <span class="s2">"F, 0046"</span> <span class="o">]</span> <span class="p">{</span> 
+
+    <span class="n">partial</span><span class="p">:</span> <span class="nf">keep</span><span class="p">(</span><span class="s2">"hand"</span><span class="p">,</span><span class="s2">"arm"</span><span class="p">,</span><span class="s2">"tie"</span><span class="p">,</span><span class="s2">"leg"</span><span class="p">);</span> <span class="c">/* Demonstrating Partial Keep and Remove */</span>
+    <span class="n">partial</span><span class="p">:</span> <span class="nf">remove</span><span class="p">(</span><span class="s2">"leg"</span><span class="p">);</span>
+    <span class="n">partial</span><span class="p">:</span> <span class="nf">get</span><span class="p">(</span><span class="s2">"I"</span><span class="p">,</span><span class="s2">"leg"</span><span class="p">,</span><span class="s2">"leg_new"</span><span class="p">);</span> <span class="c">/* get and rename */</span>
+
+<span class="p">}</span>
+
+<span class="c">/* </span>
+<span class="c">We create a new letter Γ (Gamma) and then use the partial function and removing the "tie" partial.</span>
+<span class="c">*/</span>
+
+<span class="nt">Γ</span> <span class="o">[</span> <span class="nt">F</span> <span class="o">=</span> <span class="s2">"Gamma, 0393"</span> <span class="o">]</span> <span class="p">{</span> 
+
+    <span class="n">partial</span><span class="p">:</span> <span class="nf">remove</span><span class="p">(</span><span class="s2">"tie"</span><span class="p">);</span>
+
+<span class="p">}</span>
+
+<span class="c">/* </span>
+<span class="c">We create a new letter Τ (Tau) and then use the partial function and removing the "arm" partial, </span>
+<span class="c">then we copy the "hand" partial which gives us "hand_copy" (or hand_001 subject to change), </span>
+<span class="c">finally we mirror "hand_copy" and translate it -100 on the X axis.</span>
+<span class="c">*/</span>
+
+<span class="nt">Τ</span> <span class="o">[</span> <span class="nt">Γ</span> <span class="o">=</span> <span class="s2">"Tau, 03A4"</span> <span class="o">]</span> <span class="p">{</span> 
+
+    <span class="n">partial</span><span class="p">:</span> <span class="nf">remove</span><span class="p">(</span><span class="s2">"arm"</span><span class="p">);</span>
+    <span class="n">partial</span><span class="p">:</span> <span class="nf">copy</span><span class="p">(</span><span class="s2">"hand"</span><span class="p">,</span> <span class="s2">"hand_copy"</span><span class="p">);</span>
+    <span class="k">transform</span><span class="p">:</span> <span class="nf">mirrorY</span><span class="p">(</span> <span class="s2">"hand_copy"</span> <span class="p">);</span>
+    <span class="k">transform</span><span class="p">:</span> <span class="nb">translate</span><span class="p">(</span><span class="s2">"hand_copy"</span><span class="p">,</span> <span class="mi">-100</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="p">}</span>
+
+<span class="c">/*</span>
+<span class="c">And here is a copy of Tau to create T</span>
+<span class="c">*/</span>
+
+<span class="nt">Τ</span> <span class="o">[</span> <span class="nt">T</span> <span class="o">=</span> <span class="s2">"T, 0054"</span> <span class="o">]</span> <span class="p">{}</span>
+</code></pre>
+<p><br/></p>
+<p>The glif in question:</p>
+<p><br/></p>
+<pre><span></span><code class="codehilite xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;glyph</span> <span class="na">name=</span><span class="s">"Epsilon"</span> <span class="na">format=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;advance</span> <span class="na">width=</span><span class="s">"415"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;unicode</span> <span class="na">hex=</span><span class="s">"0395"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;outline&gt;</span>
+    <span class="nt">&lt;contour&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"115"</span> <span class="na">y=</span><span class="s">"559"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="na">name=</span><span class="s">"{type:part,position:hand}"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"115"</span> <span class="na">y=</span><span class="s">"650"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"415"</span> <span class="na">y=</span><span class="s">"650"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"415"</span> <span class="na">y=</span><span class="s">"580"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"360"</span> <span class="na">y=</span><span class="s">"559"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/contour&gt;</span>
+    <span class="nt">&lt;contour&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"0"</span> <span class="na">y=</span><span class="s">"338"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="na">name=</span><span class="s">"{type:part,position:arm}"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"0"</span> <span class="na">y=</span><span class="s">"579"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"64"</span> <span class="na">y=</span><span class="s">"650"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"119"</span> <span class="na">y=</span><span class="s">"650"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"119"</span> <span class="na">y=</span><span class="s">"559"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"105"</span> <span class="na">y=</span><span class="s">"559"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"91"</span> <span class="na">y=</span><span class="s">"544"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"91"</span> <span class="na">y=</span><span class="s">"338"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/contour&gt;</span>
+    <span class="nt">&lt;contour&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"278"</span> <span class="na">y=</span><span class="s">"293"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="na">name=</span><span class="s">"{type:part,position:tie}"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"67.6692"</span> <span class="na">y=</span><span class="s">"292.585"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"67.6692"</span> <span class="na">y=</span><span class="s">"383.588"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"320.628"</span> <span class="na">y=</span><span class="s">"383.715"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"320.628"</span> <span class="na">y=</span><span class="s">"336"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/contour&gt;</span>
+    <span class="nt">&lt;contour&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"91"</span> <span class="na">y=</span><span class="s">"342"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="na">name=</span><span class="s">"{type:part,position:leg}"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"91"</span> <span class="na">y=</span><span class="s">"106"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"105"</span> <span class="na">y=</span><span class="s">"91"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"119"</span> <span class="na">y=</span><span class="s">"91"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"119"</span> <span class="na">y=</span><span class="s">"0"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"64"</span> <span class="na">y=</span><span class="s">"0"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"0"</span> <span class="na">y=</span><span class="s">"71"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"0"</span> <span class="na">y=</span><span class="s">"342"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/contour&gt;</span>
+    <span class="nt">&lt;contour&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"115"</span> <span class="na">y=</span><span class="s">"0"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="na">name=</span><span class="s">"{type:part,position:foot}"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"115"</span> <span class="na">y=</span><span class="s">"91"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"360"</span> <span class="na">y=</span><span class="s">"91"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"415"</span> <span class="na">y=</span><span class="s">"70"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"415"</span> <span class="na">y=</span><span class="s">"0"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/contour&gt;</span>
+  <span class="nt">&lt;/outline&gt;</span>
+<span class="nt">&lt;/glyph&gt;</span>
+</code></pre>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Delivery</strong></h3>
+<p>SYFF will be delivered in this repository.</p>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Usage</strong></h3>
+<h4><strong>To apply the SYFF:</strong></h4>
+<p>Planned:</p>
+<p><code>python3 '/syff.py' -s '/font.designspace' -c '/font.syff' --output-path '/adventpro-VF.ufo'</code></p>
+<hr/>
+<p>Current Test:</p>
+<p><code>python3 '/syff.py' -s '/demo.syff'</code></p>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Work Plan</strong></h3>
+<p>SYFF <strong>Work Plan</strong> is created outlining the activities, tasks, dependencies, and timeframes.</p>
+<ul>
+<li>Work Plan:
+<ul>
+<li>Tasks Assignments</li>
+<li>Dependencies</li>
+</ul></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Work Plan / Task Assignments</strong></h3>
+<ul>
+<li><strong>Docs Update</strong>:
+<ul>
+<li>VivaRado, Andreas Kalpakidis (∞1):</li>
+</ul></li>
+<li><strong>SYFF</strong>:
+<ul>
+<li>VivaRado, Andreas Kalpakidis (∞1):</li>
+</ul></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Work Plan / Dependencies</strong></h3>
+<p>SYFF currently has all the dependencies met for a successful delivery.</p>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Schedule Plan</strong></h3>
+<p>Overview:</p>
+<pre><span></span><code class="codehilite mermaid">gantt
+    title SYFF (Synthetic Font Functions)
+    dateFormat  YYYY-MM-DD
+    section Aeolus
+    AEL-0001 Aeolus Initial Letters Design (thn,reg,bld,blk):           done, des1,  2022-04-01, 2022-04-15
+    section SYFF
+    SYFF-0001 Basic Cascading Font Sheet Implementation:                done, des2,  2022-04-16, 2022-05-26
+    SYFF-0002 SYFF Parsing:                                             done, des3,  2022-05-26, 2022-05-27
+    SYFF-0003 Further Implementation of Alteration Functions:                 des5,  2022-06-01, 2022-06-30
+    section Documentation
+    DOC-0001 Documentation:                                                   des4,  2022-05-27, 2022-05-31
+</code></pre>
+<ul>
+<li>Current:
+<ul>
+<li><strike><strong>AEL-0001</strong> / from April 01 2022 to April 15 2022</strike>:
+<ul>
+<li><strong>Aeolus ∞1.000</strong>
+<ul>
+<li>Design of the first 9 letters of Aeolus</li>
+</ul></li>
+</ul></li>
+<li><strike><strong>SYFF-0001</strong> / from April 16 2022 to May 26 2022</strike>:
+<ul>
+<li><strong>Recombinator ∞1.000</strong></li>
+<li><strong>Copy ∞1.000</strong></li>
+<li><strong>Partials ∞1.000</strong></li>
+<li><strong>Fontex ∞1.000</strong></li>
+</ul></li>
+<li><strike><strong>SYFF-0002</strong> / from May 26 2022 to May 27 2022</strike>:
+<ul>
+<li><strong>SYFF Parsing ∞1.000</strong></li>
+</ul></li>
+<li><strong>DOC-0001 ∞1.000</strong> / from May 27 2022 to May 31 2022:
+<ul>
+<li>Formulating the Documentation Structure</li>
+<li>Explaining the Alteration Functions</li>
+</ul></li>
+<li><strong>SYFF-0003</strong> / from June 01 2022 to June 30 2022:
+<ul>
+<li>Implementing the Alteration Functions</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><small>Strike Through Equals Completion</small></p>
+<p>Task Codes:</p>
+<ul>
+<li>AEL-∞-∞: Aeolus Test Font</li>
+<li>SYFF-∞-∞: Synthetic Font Functions</li>
+<li>DOC-∞-∞: Documentation</li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Schedule Plan / Timeline</strong></h3>
+<ul>
+<li><strong>2022-05-27</strong>: After having the basic parts of the scripts in question and the required design files, we proceed to create the documentation and explore all the rest of the parts that need further development and refining.</li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Stakeholders</strong></h3>
+<p>We identify the <strong>Stakeholders</strong> by a <strong>Personnel Plan</strong> and create a <strong>Communication Plan</strong> to keep the <strong>Stakeholders</strong> informed.</p>
+<ul>
+<li><p><strong>Stakeholders</strong> Components:</p>
+<ul>
+<li>Applicable Stakeholders (Concious and Unconcious Entities):
+<ul>
+<li>clients</li>
+<li>personell</li>
+<li>funders</li>
+<li>suppliers</li>
+<li>equipment</li>
+</ul></li>
+<li>Glyph Design Team (GyT)</li>
+<li>Kern Testing Team (KeT)</li>
+<li>Quality Assurance Team (QaT)</li>
+<li>Programming Team (PgT)</li>
+</ul></li>
+</ul>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Stakeholders / Personnel Plan</strong></h3>
+<ul>
+<li>Personnel Plan
+<ul>
+<li>Organizational Structure
+<ul>
+<li>team members
+<ul>
+<li>internal
+<ul>
+<li>Andreas Kalpakidis (∞1)</li>
+<li>Madina Akhmatova (∞1)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Responsibilities and Qualifications
+<ul>
+<li>Project Management and Accounting: Madina Akhmatova (∞1)</li>
+<li>Planning, Development and Design: Andreas Kalpakidis (∞1)</li>
+</ul></li>
+</ul></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Stakeholders / Communication Plan</strong></h3>
+<ul>
+<li>Communication Plan
+<ul>
+<li>Stakeholder Feedback Mechanisms
+<ul>
+<li>Weekly Notifications
+<ul>
+<li>Twitter</li>
+<li>LinkedIn</li>
+</ul></li>
+</ul></li>
+<li>User Feedback Mechanisms:
+<ul>
+<li><a href="mailto:support@vivarado.com" rel="noopener" target="_blank">support@vivarado.com</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Quality Plan</strong></h3>
+<p>A <strong>Quality Plan</strong> describes the activities, standards, tools and processes necessary to achieve quality in the delivery of a project.</p>
+<p>We can now create a <strong>Quality Plan</strong> by identifying the valid <strong>Quality Targets</strong> we want to achieve. Identify the <strong>Quality Policies</strong> that will be required to achieve them. Identify how to do <strong>Quality Measurement</strong>. Lastly identify how to maintain quality with <strong>Quality Management</strong>.</p>
+<ul>
+<li><p><strong>Quality Plan (PQP)</strong> Components:</p>
+<ol>
+<li>Quality Targets</li>
+<li>Quality Management</li>
+</ol></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Quality Plan / Quality Targets</strong></h3>
+<p><strong>Quality Targets</strong> we want to achieve and what are their <strong>Acceptance Criteria</strong>, <strong>Quality Management Procedures</strong>, for each <strong>Applicable Category</strong></p>
+<ol>
+<li>Quality Targets Components:
+<ul>
+<li>Acceptance criteria</li>
+<li>Quality Management procedures</li>
+</ul></li>
+</ol>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Quality Plan / Quality Management</strong></h3>
+<p><strong>Quality Management</strong>, the nature of the <strong>Audits</strong>, <strong>Work Verification</strong> by assigning responsible personnel for <strong>Task Fulfillment</strong> and <strong>Task Checking</strong>.</p>
+<ol>
+<li>Quality Management
+<ul>
+<li>Audits</li>
+<li>Tool Scheduling</li>
+<li>Work Verification
+<ul>
+<li>Task fulfillment responsible personnel 
+<ul>
+<li>VivaRado</li>
+</ul></li>
+<li>Task checking responsible personnel
+<ul>
+<li>VivaRado</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ol>
+<hr/>
+<h3><strong>Glossary</strong></h3>
+<p><strong>SYFF</strong>: SYFF (Synthetic Font Functions), IPA: [/saɪff/ &gt;= /sɪff/].</p>
+<hr/>
+<h3><strong>Reference</strong></h3>
+<p>CSSUtils: <a href="https://pypi.org/project/cssutils/" rel="noopener" target="_blank">cssutils on pypi.org</a></p>
+<hr/>
+</div></article>
+	</body>
+</html>

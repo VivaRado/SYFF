@@ -1,0 +1,94 @@
+/* Initial Letters */
+Π { out: "P_i"; }
+Ε { out: "E_psilon"; }
+Λ { out: "L_ambda"; }
+Μ { out: "M_u"; }
+Ο { out: "O_micron"; }
+Β { out: "B_eta"; }
+Л { out: "uni041B_"; }
+J { out: "J_"; }
+S { out: "S_"; }
+З { out: "uni0417"; }
+Ч { out: "uni0427"; }
+
+
+Ш [ Π = "uni0428, 0428" ] {
+	transform: fontex("width","right", 100, 0);
+	transform: mirrorX();
+}
+
+Щ [ Ш = "uni0429, 0429" ] {}
+
+Ц [ Π = "uni0426, 0426" ] {
+	transform: mirrorX();
+}
+
+E [ Ε = "E, 0045" ] {}
+
+F [ E = "F, 0046" ] {
+	partial: keep("hand","arm","tie","leg");
+	partial: remove("leg");
+}
+
+Γ [ F = "Gamma, 0393" ] {
+	partial: remove("tie");
+}
+
+Τ [ Γ = "Tau, 03A4" ] {
+	partial: remove("arm");
+	partial: copy("hand");
+}
+
+/*
+A [ B = "name, unicode" ] {}
+
+A [ B = "name, unicode" ] {
+	out: "whatever";
+}
+
+
+A [ B = "name, unicode" ] {
+
+	transform: translate("partial_name", 0, 2);
+	transform: translate(0, 1);
+
+}
+
+A [ B = "name, unicode" ] {
+
+	transform: mirrorX();
+	transform: mirrorX( "hand_copy" );
+	transform: mirrorY();
+	transform: mirrorY( "hand_copy" );
+
+}
+
+A [ B = "name, unicode" ] {
+
+	transform: fontex("type","position", 0, -1);
+
+}
+
+
+A [ B = "name, unicode" ] {
+
+	partial: keep("partial_a", "partial_b");
+	partial: remove("partial_b");
+	partial: get("Π","partial_a","partial_a_rename");
+	partial: copy("partial_a", "partial_b");
+
+}
+
+@instance (bold) { 
+
+	A [ B = "name, unicode" ] {
+
+		partial: keep("partial_a", "partial_b");
+		partial: remove("partial_b");
+		partial: get("Π","partial_a","partial_a_rename");
+		partial: copy("partial_a", "partial_b");
+
+	}
+
+}
+*/

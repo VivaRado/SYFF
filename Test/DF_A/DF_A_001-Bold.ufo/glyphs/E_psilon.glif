@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Epsilon" format="1">
+  <advance width="457"/>
+  <unicode hex="0395"/>
+  <outline>
+    <contour>
+      <point x="196" y="475" type="line" name="{type:part,position:hand}"/>
+      <point x="196" y="650" type="line"/>
+      <point x="457" y="650" type="line"/>
+      <point x="457" y="522" type="line"/>
+      <point x="379" y="475" type="line"/>
+    </contour>
+    <contour>
+      <point x="0" y="338" type="line" name="{type:part,position:arm}"/>
+      <point x="0" y="553" type="line"/>
+      <point x="88" y="650" type="line"/>
+      <point x="200" y="650" type="line"/>
+      <point x="200" y="475" type="line"/>
+      <point x="186" y="475" type="line"/>
+      <point x="175" y="465" type="line"/>
+      <point x="175" y="338" type="line"/>
+    </contour>
+    <contour>
+      <point x="285.355" y="241.901" type="line" name="{type:part,position:tie}"/>
+      <point x="87.5026" y="241.901" type="line"/>
+      <point x="87.5026" y="416.907" type="line"/>
+      <point x="363.982" y="416.907" type="line"/>
+      <point x="363.982" y="288.721" type="line"/>
+    </contour>
+    <contour>
+      <point x="175" y="342" type="line" name="{type:part,position:leg}"/>
+      <point x="175" y="185" type="line"/>
+      <point x="185" y="175" type="line"/>
+      <point x="200" y="175" type="line"/>
+      <point x="200" y="0" type="line"/>
+      <point x="88" y="0" type="line"/>
+      <point x="0" y="97" type="line"/>
+      <point x="0" y="342" type="line"/>
+    </contour>
+    <contour>
+      <point x="196" y="0" type="line" name="{type:part,position:foot}"/>
+      <point x="196" y="175" type="line"/>
+      <point x="379" y="175" type="line"/>
+      <point x="457" y="128" type="line"/>
+      <point x="457" y="0" type="line"/>
+    </contour>
+  </outline>
+</glyph>

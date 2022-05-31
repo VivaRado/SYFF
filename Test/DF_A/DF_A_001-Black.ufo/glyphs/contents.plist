@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>.notdef</key>
+  <string>_notdef.glif</string>
+  <key>Beta</key>
+  <string>B_eta.glif</string>
+  <key>Epsilon</key>
+  <string>E_psilon.glif</string>
+  <key>J</key>
+  <string>J_.glif</string>
+  <key>Lambda</key>
+  <string>L_ambda.glif</string>
+  <key>Omicron</key>
+  <string>O_micron.glif</string>
+  <key>Pi</key>
+  <string>P_i.glif</string>
+  <key>S</key>
+  <string>S_.glif</string>
+  <key>uni0417</key>
+  <string>uni0417.glif</string>
+  <key>uni041B</key>
+  <string>uni041B_.glif</string>
+  <key>uni0427</key>
+  <string>uni0427.glif</string>
+</dict>
+</plist>
