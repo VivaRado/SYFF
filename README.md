@@ -676,7 +676,7 @@ partial: copy("partial_a");
 
 ### **Introduction / Phase Introduction / Planning Phase / Project Plan / Examples**
 
-#### E to F to Γ to T#### 
+#### E to F to Γ to T #### 
 
 Here is an example of the letter E becoming F, then Γ and T. The first point of each part of this letter have a piece of code in the name definition that allows us access with SYFF.
 
