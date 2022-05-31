@@ -347,7 +347,7 @@ BUMP
 
 
 
-#### Initial Letter Definitions#### 
+#### Initial Letter Definitions #### 
 
 
 ```css
@@ -362,7 +362,7 @@ BUMP
 ```
 
 
-#### Synthesized Letter Definitions#### 
+#### Synthesized Letter Definitions #### 
 
 
 
