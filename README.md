@@ -444,10 +444,10 @@ A {
 Review and document the Alteration Functions:
 
 *	[Copy](https://github.com/VivaRado/SYFF#copy)
-*	Transform
-*	Mirror
-*	Fontex
-*	Partial
+*	[Transform](https://github.com/VivaRado/SYFF#translate)
+*	[Mirror](https://github.com/VivaRado/SYFF#mirror)
+*	[Fontex](https://github.com/VivaRado/SYFF#fontex)
+*	[Partial](https://github.com/VivaRado/SYFF#partial)
 
 
 ---
@@ -1577,10 +1577,10 @@ A {
 Review and document the Alteration Functions:
 
 *	[Copy](https://github.com/VivaRado/SYFF#copy)
-*	Transform
-*	Mirror
-*	Fontex
-*	Partial
+*	[Transform](https://github.com/VivaRado/SYFF#translate)
+*	[Mirror](https://github.com/VivaRado/SYFF#mirror)
+*	[Fontex](https://github.com/VivaRado/SYFF#fontex)
+*	[Partial](https://github.com/VivaRado/SYFF#partial)
 
 
 ---
