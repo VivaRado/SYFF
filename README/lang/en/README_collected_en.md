@@ -22,7 +22,6 @@
 1.  **Introduction**
     1.  **Profile**
     1.  **Project Overview**
-    1.  **Organisational Documents**
     1.  **Phase Introduction**
         1.  **Initiation Phase**
             1.  **Business Case**
@@ -104,31 +103,9 @@ SYFF (Synthetic Font Functions) is a set of cascading functions that recombine a
 *   Proposal Date: 28/05/2022
 
 
----
-
-
-### **Introduction / Organisational Documents**
-
-Documentation Types:
-
-*  HTML - Responsive preview in HTML format - At README directory
-*  Standard Repository README - At the root of the repository
-*  PDF - At the root of the repository
-
-Features:
-
-*  Responsive Interface
-*  Synchronized Sidebar
-*  Hashtag Navigation
-*  PDF with TOC and Cover
-*  Multilingual Publishing
-
-Drawbacks:
-
-*  Monospace font used in PDF due to kerning issues.
-
 
 ---
+
 
 ### **Introduction / Phase Introduction**
 
@@ -136,6 +113,7 @@ For the sake of simplicity we will only present the following phases:
 
 * Initiation Phase
 * Planning Phase
+
 
 
 

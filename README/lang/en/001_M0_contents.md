@@ -8,7 +8,6 @@
 1.  **Introduction**
     1.  **Profile**
     1.  **Project Overview**
-    1.  **Organisational Documents**
     1.  **Phase Introduction**
         1.  **Initiation Phase**
             1.  **Business Case**

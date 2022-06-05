@@ -1,13 +1,12 @@
 
 ```{include=partials/introduction/profile_project.md,M0}```
 
----
-
-```{include=partials/p_001_interactivedocumentation.md}```
 
 ---
+
 
 ```{include=partials/introduction/phase_introduction/phase_introduction.md,M0}```
+
 
 ---
 
