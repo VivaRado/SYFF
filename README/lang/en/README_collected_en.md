@@ -933,6 +933,10 @@ We identify the **Stakeholders** by a **Personnel Plan** and create a **Communic
 	*  Quality Assurance Team (QaT)
 	*  Programming Team (PgT)
 
+
+---
+
+
 ### **Introduction / Phase Introduction / Planning Phase / Stakeholders / Personnel Plan**
 
 *  Personnel Plan

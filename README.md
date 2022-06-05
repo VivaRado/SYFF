@@ -1021,6 +1021,10 @@ We identify the **Stakeholders** by a **Personnel Plan** and create a **Communic
 	*  Quality Assurance Team (QaT)
 	*  Programming Team (PgT)
 
+
+---
+
+
 ### **Personnel Plan**
 <sub>Introduction / Phase Introduction / Planning Phase / Stakeholders / Personnel Plan</sub>
 
@@ -2145,6 +2149,10 @@ We identify the **Stakeholders** by a **Personnel Plan** and create a **Communic
 	*  Kern Testing Team (KeT)
 	*  Quality Assurance Team (QaT)
 	*  Programming Team (PgT)
+
+
+---
+
 
 ### **Personnel Plan**
 <sub>Introduction / Phase Introduction / Planning Phase / Stakeholders / Personnel Plan</sub>
