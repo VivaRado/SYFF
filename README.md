@@ -443,11 +443,15 @@ A {
 
 Review and document the Alteration Functions:
 
-*	Copy
+*	[Copy](https://github.com/VivaRado/SYFF#copy)
 *	Transform
 *	Mirror
 *	Fontex
 *	Partial
+
+
+---
+
 
 ### **Copy**
 <sub>Introduction / Phase Introduction / Planning Phase / Project Plan / Alteration Functions / Copy</sub>
@@ -1572,11 +1576,15 @@ A {
 
 Review and document the Alteration Functions:
 
-*	Copy
+*	[Copy](https://github.com/VivaRado/SYFF#copy)
 *	Transform
 *	Mirror
 *	Fontex
 *	Partial
+
+
+---
+
 
 ### **Copy**
 <sub>Introduction / Phase Introduction / Planning Phase / Project Plan / Alteration Functions / Copy</sub>
