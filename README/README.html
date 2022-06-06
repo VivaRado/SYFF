@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-		<title>VRD | SYFF | 1.006 | 2022/06/05</title>
+		<title>VRD | SYFF | 1.006 | 2022/06/06</title>
 		<link rel="icon" href="assets/media/thumb.ico">
 		<link rel="stylesheet" type="text/css" href="assets/css/fface.css">
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -74,6 +74,7 @@
 <li><strong>Mirror</strong></li>
 <li><strong>Fontex</strong></li>
 <li><strong>Partial</strong></li>
+<li><strong>Logging</strong></li>
 </ol></li>
 <li><strong>Examples</strong></li>
 <li><strong>Delivery</strong></li>
@@ -375,12 +376,14 @@ The project's <strong>Work Plan / Project Plan</strong> is created outlining the
 <h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Alteration Functions</strong></h3>
 <p>Review and document the Alteration Functions:</p>
 <ul>
-<li>Copy</li>
-<li>Transform</li>
-<li>Mirror</li>
-<li>Fontex</li>
-<li>Partial</li>
+<li><a href="https://github.com/VivaRado/SYFF#copy" rel="noopener" target="_blank">Copy</a></li>
+<li><a href="https://github.com/VivaRado/SYFF#translate" rel="noopener" target="_blank">Transform</a></li>
+<li><a href="https://github.com/VivaRado/SYFF#mirror" rel="noopener" target="_blank">Mirror</a></li>
+<li><a href="https://github.com/VivaRado/SYFF#fontex" rel="noopener" target="_blank">Fontex</a></li>
+<li><a href="https://github.com/VivaRado/SYFF#partial" rel="noopener" target="_blank">Partial</a></li>
+<li>Logging</li>
 </ul>
+<hr/>
 <h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Alteration Functions / Copy</strong></h3>
 <p>The definition of a SYFF rule is a copy function.</p>
 <p><br/></p>
@@ -485,8 +488,8 @@ The project's <strong>Work Plan / Project Plan</strong> is created outlining the
 
     <span class="n">partial</span><span class="p">:</span> <span class="nf">keep</span><span class="p">(</span><span class="s2">"partial_a"</span><span class="p">,</span> <span class="s2">"partial_b"</span><span class="p">);</span>
     <span class="n">partial</span><span class="p">:</span> <span class="nf">remove</span><span class="p">(</span><span class="s2">"partial_b"</span><span class="p">);</span>
-    <span class="n">partial</span><span class="p">:</span> <span class="nf">get</span><span class="p">(</span><span class="s2">"Π"</span><span class="p">,</span><span class="s2">"partial_a"</span><span class="p">,</span><span class="s2">"partial_a_rename"</span><span class="p">);</span>
-    <span class="n">partial</span><span class="p">:</span> <span class="nf">copy</span><span class="p">(</span><span class="s2">"partial_a"</span><span class="p">);</span>
+    <span class="n">partial</span><span class="p">:</span> <span class="nf">get</span><span class="p">(</span><span class="s2">"Π"</span><span class="p">,</span><span class="s2">"partial_a"</span><span class="p">,</span> <span class="s2">"partial_a_rename"</span><span class="p">);</span>
+    <span class="n">partial</span><span class="p">:</span> <span class="nf">copy</span><span class="p">(</span><span class="s2">"partial_a"</span><span class="p">,</span> <span class="s2">"partial_a_rename"</span><span class="p">);</span>
 
 <span class="p">}</span>
 </code></pre>
@@ -508,13 +511,32 @@ The project's <strong>Work Plan / Project Plan</strong> is created outlining the
 </code></pre>
 <h4>Partial Copy Function:</h4>
 <pre><span></span><code class="codehilite css"><span class="nt">partial</span><span class="o">:</span> <span class="nt">copy</span><span class="o">(</span><span class="s2">"partial_a"</span><span class="o">);</span>
+<span class="nt">partial</span><span class="o">:</span> <span class="nt">copy</span><span class="o">(</span><span class="s2">"partial_a"</span><span class="o">,</span> <span class="s2">"partial_a_rename"</span><span class="o">);</span>
 
 <span class="o">&lt;</span><span class="nt">partial</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">copy</span><span class="o">(</span> <span class="o">&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="nt">partial-new-name-string</span><span class="o">&gt;?</span> <span class="o">)</span>
+
+<span class="o">&lt;</span><span class="nt">partial-new-name-string</span><span class="o">&gt;</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nt">string</span><span class="o">&gt;.&lt;</span><span class="nt">int</span><span class="o">&gt;</span>
 </code></pre>
 <p><br/></p>
 <hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Alteration Functions / Logging</strong></h3>
+<p>A basic log function should exist to cover some of the alteration functions.</p>
+<p><br/></p>
+<pre><span></span><code class="codehilite css"><span class="nt">A</span> <span class="o">[</span> <span class="nt">B</span> <span class="o">=</span> <span class="s2">"name, unicode"</span> <span class="o">]</span> <span class="p">{</span>
+
+  <span class="n">log</span><span class="p">:</span> <span class="c">/* In Planning */</span><span class="p">;</span>
+
+<span class="p">}</span>
+</code></pre>
+<p><br/></p>
+<h4>Logging Function:</h4>
+<pre><span></span><code class="codehilite css"><span class="nt">log</span><span class="o">:</span> <span class="c">/* In Planning */</span><span class="o">;</span>
+
+<span class="o">&lt;</span><span class="nt">log</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">function</span><span class="o">(</span> <span class="o">&lt;</span><span class="nt">string</span><span class="o">&gt;</span> <span class="o">,</span> <span class="o">&lt;</span><span class="nt">string</span><span class="o">&gt;?</span> <span class="o">)</span>
+</code></pre>
+<hr/>
 <h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Examples</strong></h3>
-<h4>E to F to Γ to T ####</h4>
+<h4>E to F to Γ to T</h4>
 <p>Here is an example of the letter E becoming F, then Γ and T. The first point of each part of this letter have a piece of code in the name definition that allows us access with SYFF.</p>
 <p><br/></p>
 <pre><span></span><code class="codehilite fontex">{type:part,position:hand}

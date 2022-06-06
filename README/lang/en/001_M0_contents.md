@@ -33,6 +33,7 @@
                     1.  **Mirror**
                     1.  **Fontex**
                     1.  **Partial**
+                    1.  **Logging**
                 1.  **Examples**
                 1.  **Delivery**
                 1.  **Usage**

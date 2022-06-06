@@ -47,6 +47,7 @@
                     1.  **Mirror**
                     1.  **Fontex**
                     1.  **Partial**
+                    1.  **Logging**
                 1.  **Examples**
                 1.  **Delivery**
                 1.  **Usage**
@@ -411,11 +412,16 @@ A {
 
 Review and document the Alteration Functions:
 
-*	Copy
-*	Transform
-*	Mirror
-*	Fontex
-*	Partial
+*	[Copy](https://github.com/VivaRado/SYFF#copy)
+*	[Transform](https://github.com/VivaRado/SYFF#translate)
+*	[Mirror](https://github.com/VivaRado/SYFF#mirror)
+*	[Fontex](https://github.com/VivaRado/SYFF#fontex)
+*	[Partial](https://github.com/VivaRado/SYFF#partial)
+* Logging
+
+
+---
+
 
 ### **Introduction / Phase Introduction / Planning Phase / Project Plan / Alteration Functions / Copy**
 
@@ -599,8 +605,8 @@ A [ B = "name, unicode" ] {
 
 	partial: keep("partial_a", "partial_b");
 	partial: remove("partial_b");
-	partial: get("Π","partial_a","partial_a_rename");
-	partial: copy("partial_a");
+	partial: get("Π","partial_a", "partial_a_rename");
+	partial: copy("partial_a", "partial_a_rename");
 
 }
 
@@ -640,8 +646,11 @@ partial: get("Π","partial_a","partial_a_rename");
 
 ```css
 partial: copy("partial_a");
+partial: copy("partial_a", "partial_a_rename");
 
 <partial()> = copy( <partial-name-string>, <partial-new-name-string>? )
+
+<partial-new-name-string> = <string>.<int>
 
 
 ```
@@ -651,10 +660,40 @@ partial: copy("partial_a");
 
 ---
 
+### **Introduction / Phase Introduction / Planning Phase / Project Plan / Alteration Functions / Logging**
+
+A basic log function should exist to cover some of the alteration functions.
+
+
+<br>
+
+```css
+
+A [ B = "name, unicode" ] {
+
+  log: /* In Planning */;
+
+}
+
+
+```
+
+<br>
+
+#### Logging Function:
+
+```css
+log: /* In Planning */;
+
+<log()> = function( <string> , <string>? )
+
+```
+
+---
 
 ### **Introduction / Phase Introduction / Planning Phase / Project Plan / Examples**
 
-#### E to F to Γ to T #### 
+#### E to F to Γ to T 
 
 Here is an example of the letter E becoming F, then Γ and T. The first point of each part of this letter have a piece of code in the name definition that allows us access with SYFF.
 
