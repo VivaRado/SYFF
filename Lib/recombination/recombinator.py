@@ -227,8 +227,14 @@ class Recomb(object):
 				new_list.append(fs)
 			elif ax["operation"] == "copy":
 				if x in inx_part:
+
+					if len(inx_part) > 1:
+						copy_name = inx_part[1]
+					else:
+						copy_name = self.assign_copy_number(x, inx_part[0],path.attrib["id"])
+
 					fs = '{type:part,position:%s}' % (x)
-					fs_c = '{type:part,position:%s}' % (x+"_copy")
+					fs_c = '{type:part,position:%s}' % (copy_name)
 					new_list.append(fs)
 					new_list.append(fs_c)
 				else:
@@ -274,6 +280,15 @@ class Recomb(object):
 		#
 		return self._t+'/'+glifnam
 
+	#
+	def assign_copy_number(self, nam, p_name, id_list):
+		pos_nn = [parse_fontex(x)["position"].rsplit(".")[0] for x in ast.literal_eval(id_list)]
+		#pos_nn = [x.rsplit(".")[0] for x in pos]
+		counts = dict((i, pos_nn.count(i)) for i in pos_nn)
+		k_name = p_name
+		if "." in p_name:
+			k_name = p_name.rsplit(".")[0]
+		return nam.rsplit(".")[0]+"."+str(counts[k_name]).rsplit(".")[0]
 	#
 	def get_partial(self, fname, ax, _indexes, ufo_dir):
 	
@@ -390,11 +405,13 @@ def parse_partials(t):
 
 def parse_fontex(fx):
 	json_data = {}
-	pattern = re.compile(r'(\w*):(\w*)')
+	pattern = re.compile(r'(\w*):([\w.]*)')
 	matches = re.finditer(pattern, fx)
+
 	for match in matches:
 		key = match.group(1)
 		value = match.group(2)
+
 		if key == "index":
 			value = int(value)
 		json_data[key] = value

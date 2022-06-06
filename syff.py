@@ -1,6 +1,6 @@
 #import lib.cssutils as cssutils
 from Lib.syffutils import parser
-from Lib.syffutils import convert
+from Lib.syffutils import converter
 
 from argparse import ArgumentParser
 from pathlib import Path
@@ -48,7 +48,7 @@ if faults == False:
 
 	syff_file = parser.parseString(Path(args.source).read_text())
 	
-	syff_rcb = convert.SYFF_RCB(syff_file)
+	syff_rcb = converter.SYFF_RCB(syff_file)
 	#
 	print("CONVERTED SYFF TO RCB")
 	#

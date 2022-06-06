@@ -12,7 +12,7 @@ import warnings
 
 import pprint
 
-def remove_q (_s):
+def remove_q(_s):
 
 	if any(m in _s for m in ["'", '"']):
 
@@ -264,10 +264,9 @@ def SYFF_RCB(
 
 							if any(m == _a[0] for m in ["keep", "remove", "copy"]):
 
-								_r_m["fnc"] = "Partial"
-
 								areas = manage_form_list(_a[1])
-
+								
+								_r_m["fnc"] = "Partial"
 								_r_m["arg"] = [{"operation":_a[0],"area": areas}]
 
 							elif _a[0] == "get":

@@ -36,7 +36,7 @@ F [ E = "F, 0046" ] {
 
 Τ [ Γ = "Tau, 03A4" ] {
 	partial: remove("arm");
-	partial: copy("hand");
+	partial: copy("hand","hand.1");
 }
 
 /*

@@ -26,9 +26,9 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 #
 def do_shift_anchor(anchor_file, x_offset, _fonts):
 	#
-	with open(anchor_file, 'r') as in_f:
+	with open(anchor_file, 'r') as f_in:
 		#
-		data = json.load(in_f,object_pairs_hook=OrderedDict)
+		data = json.load(f_in,object_pairs_hook=OrderedDict)
 		#
 		data_copy = copy.deepcopy(data)
 		#
@@ -51,9 +51,9 @@ def do_shift_anchor(anchor_file, x_offset, _fonts):
 					#
 				#
 		#
-		in_f.close()
+		f_in.close()
 		#
-		with open(anchor_file, 'w') as out_f:
+		with open(anchor_file, 'w') as f_out:
 			#
 			b = json.dumps(data_copy, indent=4)
 			#
@@ -61,9 +61,9 @@ def do_shift_anchor(anchor_file, x_offset, _fonts):
 			output3 = re.sub(r',\s+', ', ', output2)
 			output4 = re.sub(r'\s+\],', '],\n           ', output3)
 			#
-			out_f.write(output4)
+			f_out.write(output4)
 			#
-			out_f.close()
+			f_out.close()
 			#
 		#
 	#
