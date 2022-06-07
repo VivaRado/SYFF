@@ -49,6 +49,7 @@ from fontParts.world import *
 import numpy as np
 import itertools as it
 import plistlib
+import warnings
 import matplotlib.pyplot as plt
 import xml.etree.ElementTree as ET
 from svg.path import parse_path
@@ -96,7 +97,6 @@ class Recomb(object):
 	def t_copy(self, file, nam, uni, _dir, ax=False):
 		#
 		#print("> COPY",file, nam, ax, userNameToFileName(nam))
-		# parsing / SAME
 		tree, svg_data = parse_svg_path(file)
 		svg_data.attrib['id'] = make_id(svg_data.attrib['id'], nam, uni)
 		#
@@ -107,7 +107,6 @@ class Recomb(object):
 	def t_move(self, file, nam, uni, _dir, ax=False):
 		#
 		#print(file, nam, ax, userNameToFileName(file))
-		# parsing / SAME
 		tree, svg_data = parse_svg_path(file)
 		svg_data.attrib['id'] = make_id(svg_data.attrib['id'], nam, uni)
 		path = tree.find('./{*}path')
@@ -123,13 +122,11 @@ class Recomb(object):
 		
 		glifnam = userNameToFileName(nam)
 		save_svg_file(file,glifnam,tree)
-		#
 		return self._t+'/'+glifnam
 
 	def t_mirror(self, file, nam, uni, _dir, ax=False):
 		#
 		#print("> MIRROR",file, nam, ax, userNameToFileName(file))
-		# parsing / SAME
 		tree, svg_data = parse_svg_path(file)
 		svg_data.attrib['id'] = make_id(svg_data.attrib['id'], nam, uni)
 		path = tree.find('./{*}path')
@@ -137,8 +134,7 @@ class Recomb(object):
 		_v = ax == "vertical"
 		svg_string = ET.tostring(svg_data, encoding='utf8', method='xml')
 		anchors = get_shape_points(svg_string,nam)
-		#print("CONTOUR POINT COORDINATES")
-		#pprint.pprint(anchors)
+		
 		bbox = bounding_box(anchors[0])
 		bbox_height = bbox[0][1]
 		path.attrib['d'] = formatPath(
@@ -152,25 +148,25 @@ class Recomb(object):
 									y=bbox_height
 								)
 							)
-		#
 		# saving / SAME
 		glifnam = userNameToFileName(nam)
 		save_svg_file(file,glifnam,tree)
-		#
 		return self._t+'/'+glifnam
 
 	def t_partial(self, file, nam, uni, _dir, ax=False):
 
 		#print("> PARTIAL",file, nam, ax)
 		# parsing / SAME
-		tree, svg_data = parse_svg_path(file)
-		svg_data.attrib['id'] = make_id(svg_data.attrib['id'], nam, uni)
-		svg_string = ET.tostring(svg_data, encoding='utf8', method='xml')
-		p_ids = parse_partials(tree)
+		tree_dest, svg_data_dest = parse_svg_path(file)
+		svg_data_dest.attrib['id'] = make_id(svg_data_dest.attrib['id'], nam, uni)
+		svg_str_dest = ET.tostring(svg_data_dest, encoding='utf8', method='xml')
+		p_ids = parse_partials(tree_dest)
 		part_name_list = [ x['position'] for x in p_ids ]
 		inx_part = []
 		# Get Regional Fontex for function.
 		ufo_curr_inst_dir = os.path.join(self._d, self.current_font_ufo, self.current_font_instance_name)
+
+		#dest_part_path, g_name = self.get_partial(file, ax, inx_part, ufo_curr_inst_dir)
 
 		if "type" not in ax.keys():
 			ax["type"] = "partial"
@@ -189,6 +185,12 @@ class Recomb(object):
 
 				inx_part = ax["area"]
 
+			elif ax["operation"] == "get":
+
+				inx_part = [ax["area"]]
+				part_name_list.append(ax["area"])
+				file = os.path.join(self._t,userNameToFileName(ax["source"]))
+
 			part_path, g_name = self.get_partial(file, ax, inx_part, ufo_curr_inst_dir)
 
 		else:
@@ -196,7 +198,7 @@ class Recomb(object):
 			inx_part = [ax["area"]]
 			part_path, g_name = self.get_partial(file, ax, inx_part, ufo_curr_inst_dir)
 
-		path = tree.find('./{*}path')
+		path = tree_dest.find('./{*}path')
 		new_list = []
 
 		for x in part_name_list:
@@ -218,15 +220,26 @@ class Recomb(object):
 				else:
 					fs = '{type:part,position:%s}' % (x)
 					new_list.append(fs)
+			elif ax["operation"] == "get":
+
+				fs = '{type:part,position:%s}' % (x)
+				new_list.append(fs)
 
 		path.attrib["id"] = repr(new_list)
-		path.attrib['d'] = formatPath( parsePath(part_path.attrib['d']) )
+
+		if ax["operation"] == "get":
+
+			path_dest = tree_dest.find('./{*}path')
+			path.attrib['d'] = formatPath( parsePath(path_dest.attrib['d']+part_path.attrib['d']) )
+			
+		else:
+
+			path.attrib['d'] = formatPath( parsePath(part_path.attrib['d']) )
 
 		# saving / SAME
 		glifnam = userNameToFileName(nam)
-		save_svg_file(file,glifnam,tree)
+		save_svg_file(file,glifnam,tree_dest)
 		return self._t+'/'+glifnam
-		#
 
 	def t_fontex(self, file, nam, uni, _dir, ax=False):
 		#
@@ -255,7 +268,6 @@ class Recomb(object):
 		# saving / SAME
 		glifnam = userNameToFileName(nam)
 		save_svg_file(file,glifnam,tree)
-		#
 		return self._t+'/'+glifnam
 
 	#
@@ -272,18 +284,27 @@ class Recomb(object):
 	
 		_a = os.path.join(self._d, ufo_dir)
 		glif_names = get_glif_names_plist(_a)
+		svg_names = get_svg_names(self._t)
 		g_name = fname.split("/")[-1]
-		
-		if g_name in glif_names:
+
+		if g_name in glif_names and g_name not in svg_names:
 
 			#print("PARTIAL FOUND AS UFO")
 			the_path = manage_compound_from_ufo(_a, g_name, ax, _indexes)
 
+		elif g_name in glif_names and g_name in svg_names:
+
+			#print("PARTIAL FOUND AS SVG", fname, _indexes)
+			the_path = manage_compound_from_svg(fname, ax, _indexes)
+
 		else:
+
+			#if g_name in svg_names:
 			# Did not find the partial in the glyphs of the UFO will look in the SVGs
 			#print("PARTIAL FOUND AS SVG", fname)
 
 			the_path = manage_compound_from_svg(fname, ax, _indexes)
+
 
 		return the_path, g_name
 
@@ -310,8 +331,6 @@ class Recomb(object):
 						"":(),
 						}
 
-
-
 		ans = copy.deepcopy(ins)
 
 		for letter,funct in ins.items():
@@ -327,13 +346,6 @@ class Recomb(object):
 						out = function_declaration[fdet["fnc"]](prevlet,fdet_d.nam,fdet_d.uni,_dir,*fdet_d.arg)
 						prevlet = out
 						ans[letter][fnam]["out"].append(out)
-
-					
-
-		#pprint.pprint(ans, sort_dicts=False)
-		
-
-
 
 
 def get_glif_coord(f_g, _type):
@@ -397,8 +409,6 @@ def parse_fontex(fx):
 	return json_data
 
 
-
-
 def get_glif_names_plist(_a):
 
 	cont_f = open(os.path.join(_a,'glyphs','contents.plist'), 'rb')
@@ -408,8 +418,13 @@ def get_glif_names_plist(_a):
 
 	return glif_names
 
-#################################################
+def get_svg_names(_a):
 
+	svg_names = [f.split(".svg")[0] for f in os.listdir(_a) if os.path.isfile(join(_a, f))]
+
+	return svg_names
+
+#################################################
 
 def manage_compound_from_ufo(_a, g_name, ax, _indexes):
 
@@ -419,17 +434,21 @@ def manage_compound_from_ufo(_a, g_name, ax, _indexes):
 	for glyph in font1:
 
 		if userNameToFileName(glyph._name) == g_name:
-			
-			#print("PARTIAL for: ",g_name)
 
 			_p = []
 			_g = fp_font[glyph._name] # RGlyph
 
 			if _indexes == None:
+				
 				_p = _g[fx_type_area_index(_g, ax["type"], ax["area"])]
 			else:
+
 				for x in _indexes:
-					_g.removeContour(_g[partial_name_index(_g, x)])
+					try:
+						_g.removeContour(_g[partial_name_index(_g, x)])
+					except Exception as e:
+						warnings.warn("Partial Non Existent")
+					
 				_p = _g
 
 			the_path = writeGlyphPath(_p)
@@ -446,25 +465,33 @@ def manage_compound_from_svg(fname, ax, _indexes):
 	f_comp = []
 	comp = svg_path_to_compound(prs_p)
 
-	for x in _indexes:
-		p_inx = d_name_index(parse_partials(tree), x)
-		action_inx.append(p_inx)
+	if _indexes != None:
 
-	if any(m in ax["operation"] for m in ["keep", "remove"]):
+		for x in _indexes:
+			p_inx = d_name_index(parse_partials(tree), x)
+			action_inx.append(p_inx)
 
-		for i, c in enumerate(comp):
-			if i not in action_inx:
+		if any(m in ax["operation"] for m in ["keep", "remove"]):
+
+			for i, c in enumerate(comp):
+				if i not in action_inx:
+					f_comp.append( formatPath(c) )
+
+		elif ax["operation"] == "copy":
+
+			for i, c in enumerate(comp):
 				f_comp.append( formatPath(c) )
+				if i in action_inx:
+					f_comp.append( formatPath(c) )
 
-	elif ax["operation"] == "copy":
+		elif ax["operation"] == "get":
 
-		for i, c in enumerate(comp):
-			f_comp.append( formatPath(c) )
-			if i in action_inx:
-				f_comp.append( formatPath(c) )
+			for i, c in enumerate(comp):
+				if i in action_inx:
+					f_comp.append( formatPath(c) )
 
 
-	p.attrib['d'] = formatPath( parsePath(''.join(f_comp)) )
+		p.attrib['d'] = formatPath( parsePath(''.join(f_comp)) )
 
 	return p
 

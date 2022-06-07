@@ -262,7 +262,11 @@ def SYFF_RCB(
 
 							elif _a[0] == "get":
 
-								warnings.warn("partial get is not supported")
+								args = manage_form_list(_a[1])
+								print(args)
+								#warnings.warn("partial get is not supported")
+								_r_m["fnc"] = "Partial"
+								_r_m["arg"] = [{"operation":_a[0],"source":args[0],"area": args[1]}]
 
 
 						elif _n == "out":
