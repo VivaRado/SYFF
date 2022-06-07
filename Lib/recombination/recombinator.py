@@ -75,40 +75,18 @@ from Lib.ufo2svg.glyphs import writeGlyphPath
 from Lib.generic.generic_tools import dotdict
 
 
-# dir_path = os.path.dirname(os.path.realpath(__file__))
-
-# _s = os.path.join(dir_path, "Test", "DF_A_vfc_ufo", "DF_A")
-# _t = os.path.join(dir_path, "Test", "temp_d")
-
-current_fontex_ufo = "DF_A_001-FONTEX.ufo"
-current_font_instance_name = "DF_A_001-Light.ufo"
-
-current_font_ufo = "Test/DF_A/"
-
 class Recomb(object):
 	def __init__(self):
 		
-
-		self.current_fontex_ufo = current_fontex_ufo
-		self.current_font_instance_name = current_font_instance_name
-		#self.current_font_instance_temp_directory = _t
-		
-		#self.current_font_instance_vectors_directory = _t
-
-		#convert instance
-
-		# _a = os.path.join(dir_path, _t_ufo)
-		# font1 = Font.open(_a)
-		# copiedFont = Font.copy()
-		# copiedFont.save(_t_ufo_temp)
+		self.current_font_ufo = "Test/DF_A/"
+		self.current_fontex_ufo = "DF_A_001-FONTEX.ufo"
+		self.current_font_instance_name = "DF_A_001-Light.ufo"
 
 	def conv(self, _dir):
 
-#		print("-----", _dir)
 		self._d = _dir
 		self._s = os.path.join(_dir, "Test", "DF_A")
 		self._t = os.path.join(_dir, "Test", "temp_d")
-		#self.current_font_instance_vectors_directory
 
 		convertUFOToSVGFiles(self, 
 			OpenFont(os.path.join(self._s,self.current_font_instance_name)), 
@@ -192,7 +170,7 @@ class Recomb(object):
 		part_name_list = [ x['position'] for x in p_ids ]
 		inx_part = []
 		# Get Regional Fontex for function.
-		ufo_curr_inst_dir = os.path.join(self._d, current_font_ufo, current_font_instance_name)
+		ufo_curr_inst_dir = os.path.join(self._d, self.current_font_ufo, self.current_font_instance_name)
 
 		if "type" not in ax.keys():
 			ax["type"] = "partial"
@@ -262,7 +240,7 @@ class Recomb(object):
 		svg_string = ET.tostring(svg_data, encoding='utf8', method='xml')
 		anchors = get_shape_points(svg_string,nam)
 		#print("CONTOUR POINT COORDINATES")
-		ufo_fontex_dir = os.path.join(current_font_ufo,current_fontex_ufo)
+		ufo_fontex_dir = os.path.join(self.current_font_ufo,self.current_fontex_ufo)
 		fontex_anchors = self.get_fontex(file, ax, None, ufo_fontex_dir)
 		path.attrib['d'] = formatPath(
 								translatePathInArea(
