@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Epsilon__0395__380" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" width="612px" height="792px" viewBox="0 0 612 792" style="enable-background:new 0 0 612 792;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#00FF00;}
+	.st1{fill:#FFD400;}
+	.st2{fill:#FF9700;}
+	.st3{fill:#FF4200;}
+	.st4{fill:#FF0098;}
+	.st5{font-family:monospace;}
+	.st6{font-size:18.0419px;}
+	.st7{fill:none;stroke:#FF4200;stroke-miterlimit:10;}
+	.st8{fill:none;stroke:#FFD400;stroke-miterlimit:10;}
+	.st9{fill:none;stroke:#FF0098;stroke-miterlimit:10;}
+	.st10{fill:none;stroke:#FF9700;stroke-miterlimit:10;}
+	.st11{fill:none;stroke:#00FF00;stroke-miterlimit:10;}
+</style>
+<g>
+	<polyline class="st0" points="183,95 183,71 496,71 496,88 490,95 183,95 	"/>
+	<polyline class="st1" points="116,383 116,122 162,71 187,71 187,95 173,95 140,132 140,383 116,383 	"/>
+	<polyline class="st2" points="396.2,393.4 128.2,393.4 128.2,369 403.2,369 403.2,384.1 396.2,393.4 	"/>
+	<polyline class="st3" points="140,379 140,659 173,697 187,697 187,721 162,721 116,670 116,379 140,379 	"/>
+	<polyline class="st4" points="183,721 183,697 490,697 496,704 496,721 183,721 	"/>
+	<text transform="matrix(1 0 0 1 229.4996 134.9998)" class="st0 st5 st6">name=&quot;{type:part,position:hand}&quot;</text>
+	<text transform="matrix(1 0 0 1 229.4997 241.9998)" class="st1 st5 st6">name=&quot;{type:part,position:arm}&quot;</text>
+	<text transform="matrix(1 0 0 1 229.4997 334.9998)" class="st2 st5 st6">name=&quot;{type:part,position:tie}&quot;</text>
+	<text transform="matrix(1 0 0 1 229.4998 532.9998)" class="st3 st5 st6">name=&quot;{type:part,position:leg}&quot;</text>
+	<text transform="matrix(1 0 0 1 229.4997 661.9998)" class="st4 st5 st6">name=&quot;{type:part,position:foot}&quot;</text>
+	<line class="st7" x1="151.5" y1="475" x2="225" y2="529"/>
+	<line class="st8" x1="151.5" y1="184" x2="225" y2="238"/>
+	<line class="st9" x1="193" y1="685" x2="225" y2="656.6"/>
+	<line class="st10" x1="193" y1="360.2" x2="225" y2="331.8"/>
+	<line class="st11" x1="193" y1="102.6" x2="225" y2="131"/>
+</g>
+</svg>

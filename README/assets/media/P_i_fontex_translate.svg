@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1040px" height="600px" viewBox="0 0 1040 600" style="enable-background:new 0 0 1040 600;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#231F20;stroke:#231F20;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#231F20;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#F89821;stroke-width:2;stroke-miterlimit:10;}
+	.st3{fill:#F89821;}
+	.st4{font-family:monospace;}
+	.st5{font-size:15px;}
+</style>
+<g id="XMLID_3_">
+	<g>
+		<path class="st0" d="M101.9,33L67.6,62.8v375.6H33.8v16.2h83.7v-16.2H83.8V69.3l22.7-20.1"/>
+		<polyline id="XMLID_1_" class="st1" points="106.5,49.2 308.9,49.2 333.5,69.3 333.5,438.4 299.8,438.4 299.8,454.6 383.4,454.6 
+			383.4,438.4 349.7,438.4 349.7,62.8 315.3,33 102.1,33 		"/>
+		<path class="st2" d="M18.3,468.8h114.8V18.7H18.3C18.3,18.7,18.3,468.8,18.3,468.8z"/>
+	</g>
+	<g>
+		<g>
+			<path class="st0" d="M612.2,33l-34.4,29.8v375.6h-33.7v16.2h83.7v-16.2H594V69.3l22.7-20.1"/>
+			<polyline id="XMLID_2_" class="st1" points="616.7,49.2 947.6,49.2 972.3,69.3 972.3,438.4 938.6,438.4 938.6,454.6 
+				1022.2,454.6 1022.2,438.4 988.5,438.4 988.5,62.8 954.1,33 612.3,33 			"/>
+			<path class="st2" d="M528.5,468.8h114.8V18.7H528.5C528.5,18.7,528.5,468.8,528.5,468.8z"/>
+		</g>
+		<polygon class="st3" points="503.3,225.9 485.4,243.8 503.3,261.6 		"/>
+	</g>
+	<g>
+		<text id="XMLID_225_" transform="matrix(1 0 0 1 300 550)" class="st3 st4 st5">transform: fontex(&quot;width&quot;,&quot;left&quot;, -100, 0);</text>
+	</g>
+</g>
+</svg>

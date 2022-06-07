@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1480px" height="900px" viewBox="0 0 1480 900" style="enable-background:new 0 0 1480 900;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#787878;stroke-miterlimit:10;}
+	.st1{fill:#B2D895;stroke:#6ABD45;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#F8971D;stroke-width:2;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#F8971D;stroke-miterlimit:10;}
+	.st4{fill:#F8971D;}
+	.st5{font-family:monospace;}
+	.st6{font-size:18.0419px;}
+	.st7{fill:#6ABD45;}
+	.st8{fill:#F4A99D;stroke:#EF4823;stroke-miterlimit:10;}
+	.st9{fill:none;stroke:#EF4823;stroke-miterlimit:10;}
+	.st10{fill:#EF4823;}
+	.st11{fill:#FECB93;stroke:#F8971D;stroke-miterlimit:10;}
+	.st12{fill:#FEEA96;stroke:#FED401;stroke-miterlimit:10;}
+	.st13{fill:none;stroke:#FED401;stroke-miterlimit:10;}
+	.st14{fill:#FED401;}
+	.st15{fill:#787878;}
+	.st16{fill:none;stroke:#A3A3A2;stroke-miterlimit:10;}
+	.st17{fill:none;stroke:#C2C1C1;stroke-miterlimit:10;}
+	.st18{fill:none;stroke:#6ABD45;stroke-miterlimit:10;}
+</style>
+<g>
+	<line class="st0" x1="751" y1="750.6" x2="911" y2="869.6"/>
+	<path class="st1" d="M192.9,100.6l-53,46v579h-52v25h129v-25h-52v-569l35-31"/>
+	<path class="st2" d="M63.9,772.6h177v-694h-177V772.6z"/>
+	<path class="st3" d="M473.9,772.6h177v-694h-177V772.6z"/>
+	<text transform="matrix(1 0 0 1 124.4475 38.4093)" class="st4 st5 st6">name=&quot;{type:width,position:left}&quot;</text>
+	<line class="st3" x1="87.9" y1="63.6" x2="119.9" y2="35.2"/>
+	<text transform="matrix(1 0 0 1 532.4271 38.4093)" class="st4 st5 st6">name=&quot;{type:width,position:right}&quot;</text>
+	<line class="st3" x1="495.9" y1="63.6" x2="527.9" y2="35.2"/>
+	<circle class="st7" cx="87.9" cy="750.6" r="7.1"/>
+	<polyline id="XMLID_24_" class="st8" points="912,100.6 814,187.6 814,596.6 751,655.6 751,750.6 1080,750.6 1080,655.6 
+		1017,596.6 1017,285.6 1027,275.6 	"/>
+	<g>
+		<path class="st9" d="M1027,275.6h131l10,10v307l-63,63v95h325v-95l-59-59v-409l-98-87H912"/>
+		<circle class="st10" cx="751" cy="750.6" r="7.1"/>
+	</g>
+	<polyline id="XMLID_560_" class="st11" points="949,130.6 855,217.6 855,643.6 791,685.6 791,780.6 1100,780.6 1100,685.6 
+		1030,640.6 1030,315.6 1039,305.6 	"/>
+	<g>
+		<path class="st3" d="M1039,305.6h156l10,11v327l-60,42v95h305v-95l-70-45v-423l-95-87H949"/>
+		<circle class="st4" cx="791" cy="780.6" r="7.1"/>
+	</g>
+	<polyline id="XMLID_558_" class="st12" points="969,170.1 895,237.1 895,728.1 843,749.1 843,819.1 1039,819.1 1039,749.1 
+		986,728.1 986,275.1 1004,261.1 	"/>
+	<g>
+		<path class="st13" d="M1004,261.1h262l14,14v453l-49,21v70h193v-70l-53-21v-491l-70-67H969"/>
+		<circle class="st14" cx="843" cy="819.1" r="7.1"/>
+	</g>
+	<circle class="st4" cx="63.9" cy="78.6" r="7.1"/>
+	<circle class="st4" cx="473.9" cy="78.6" r="7.1"/>
+	<g>
+		<line class="st0" x1="724.5" y1="723.7" x2="724.5" y2="685.9"/>
+		<g>
+			<polygon class="st15" points="729.5,687.3 724.5,678.7 719.5,687.3 			"/>
+		</g>
+	</g>
+	<g>
+		<line class="st0" x1="34.5" y1="766" x2="34.5" y2="728.2"/>
+		<g>
+			<polygon class="st15" points="39.5,729.7 34.5,721 29.5,729.7 			"/>
+		</g>
+	</g>
+	<polyline class="st0" points="751,655.6 791,685.6 843,749.1 911,844.6 	"/>
+	<polyline class="st0" points="814,596.6 855,643.6 895,728.1 963,844.6 	"/>
+	<polyline class="st16" points="814,187.6 855,217.6 895,237.1 963,265.6 	"/>
+	<polyline class="st17" points="912,100.6 949,130.6 969,170.1 1016,219.6 	"/>
+	<circle class="st7" cx="87.9" cy="725.6" r="4.6"/>
+	<circle class="st7" cx="140" cy="725.6" r="4.6"/>
+	<circle class="st7" cx="216.9" cy="725.6" r="4.6"/>
+	<circle class="st7" cx="216.9" cy="750.6" r="4.6"/>
+	<circle class="st7" cx="164.9" cy="725.6" r="4.6"/>
+	<circle class="st7" cx="140" cy="146.6" r="4.6"/>
+	<circle class="st7" cx="193.1" cy="100.6" r="4.6"/>
+	<circle class="st7" cx="199.9" cy="125.6" r="4.6"/>
+	<circle class="st7" cx="165.2" cy="156.6" r="4.6"/>
+</g>
+<g id="XMLID_549_">
+	<path id="XMLID_551_" class="st18" d="M1023,244.6h312l38,31v569h-52v25h129v-25h-52v-579l-53-46h-329 M1016,219.6l-53,46v579h-52
+		v25h129v-25h-52v-569l35-31"/>
+</g>
+<polyline id="XMLID_553_" class="st18" points="199.9,125.6 511.9,125.6 549.9,156.6 549.9,725.6 497.9,725.6 497.9,750.6 
+	626.9,750.6 626.9,725.6 574.9,725.6 574.9,146.6 521.9,100.6 193.1,100.6 "/>
+<path id="XMLID_555_" class="st1" d="M1016,219.6l-53,46v579h-52v25h129v-25h-52v-569l35-31"/>
+<circle id="XMLID_550_" class="st7" cx="911" cy="869.6" r="7.1"/>
+</svg>
