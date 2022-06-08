@@ -10,6 +10,7 @@ J { out: "J_"; }
 S { out: "S_"; }
 З { out: "uni0417"; }
 Ч { out: "uni0427"; }
+Y { out: "Y_"; }
 
 
 Ш [ Π = "uni0428, 0428" ] {
@@ -37,6 +38,7 @@ F [ E = "F, 0046" ] {
 Τ [ Γ = "Tau, 03A4" ] {
 	partial: remove("arm");
 	partial: copy("hand","hand.1");
+	partial: get("Y","leg","leg_t");
 }
 
 /*
