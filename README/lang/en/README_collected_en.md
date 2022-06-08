@@ -1,7 +1,6 @@
 ## **Preface**
 
-**SYFF** (Synthetic Font Functions), IPA: [/saɪff/ >= /sɪff/], is an Open Source project of **VivaRado**, Think of it as CSS but for fonts.
-
+**SYFF** (Synthetic Font Functions), IPA: [/saɪff/ >= /sɪff/], "σύνθεση" (sýnthesi), is an Open Source project of **VivaRado**, Think of it as CSS but for fonts.
 
 
 <div markdown='1' class="header_logo">
