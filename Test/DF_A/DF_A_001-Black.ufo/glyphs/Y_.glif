@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Y" format="2">
+  <advance width="675"/>
+  <unicode hex="0059"/>
+  <outline>
+    <contour>
+      <point x="330" y="406" type="line" name="{type:part,position:bowl}"/>
+      <point x="268" y="463" type="line"/>
+      <point x="268" y="499" type="line"/>
+      <point x="327" y="557" type="line"/>
+      <point x="327" y="650" type="line"/>
+      <point x="0" y="650" type="line"/>
+      <point x="0" y="557" type="line"/>
+      <point x="66" y="492" type="line"/>
+      <point x="66" y="398" type="line"/>
+      <point x="244" y="242" type="line"/>
+      <point x="434" y="242" type="line"/>
+      <point x="612" y="398" type="line"/>
+      <point x="612" y="494" type="line"/>
+      <point x="676" y="557" type="line"/>
+      <point x="676" y="650" type="line"/>
+      <point x="349" y="650" type="line"/>
+      <point x="349" y="557" type="line"/>
+      <point x="409" y="497" type="line"/>
+      <point x="409" y="463" type="line"/>
+      <point x="347" y="406" type="line"/>
+    </contour>
+    <contour>
+      <point x="237" y="336" type="line" name="{type:part,position:leg}"/>
+      <point x="237" y="155" type="line"/>
+      <point x="174" y="93" type="line"/>
+      <point x="174" y="0" type="line"/>
+      <point x="502" y="0" type="line"/>
+      <point x="502" y="93" type="line"/>
+      <point x="439" y="155" type="line"/>
+      <point x="439" y="336" type="line"/>
+    </contour>
+  </outline>
+</glyph>
