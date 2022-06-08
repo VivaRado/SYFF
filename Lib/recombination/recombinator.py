@@ -49,7 +49,6 @@ from fontParts.world import *
 import numpy as np
 import itertools as it
 import plistlib
-import warnings
 import matplotlib.pyplot as plt
 import xml.etree.ElementTree as ET
 from svg.path import parse_path
@@ -75,6 +74,8 @@ from Lib.helpers.svgpath2mpl import parse_path as mpl_parse_path
 from Lib.ufo2svg.glyphs import writeGlyphPath
 from Lib.generic.generic_tools import dotdict
 
+import warnings
+from Lib.helpers import warning_format
 
 class Recomb(object):
 	def __init__(self):
@@ -188,7 +189,21 @@ class Recomb(object):
 			elif ax["operation"] == "get":
 
 				inx_part = [ax["area"]]
-				part_name_list.append(ax["area"])
+				
+				if ax["rename"] == None:
+					part_name_list.append(ax["area"])
+				else:
+
+					if ax["rename"] in part_name_list:
+						path = tree_dest.find('./{*}path')
+						copy_name = self.assign_copy_number( ax["rename"], ax["rename"], path.attrib["id"])
+
+						warnings.warn("Partial Name Taken, Renaming: "+ax["rename"]+" to "+copy_name)
+
+						part_name_list.append(copy_name)
+					else:
+						part_name_list.append(ax["rename"])
+
 				file = os.path.join(self._t,userNameToFileName(ax["source"]))
 
 			part_path, g_name = self.get_partial(file, ax, inx_part, ufo_curr_inst_dir)
@@ -223,6 +238,7 @@ class Recomb(object):
 			elif ax["operation"] == "get":
 
 				fs = '{type:part,position:%s}' % (x)
+
 				new_list.append(fs)
 
 		path.attrib["id"] = repr(new_list)
@@ -447,6 +463,7 @@ def manage_compound_from_ufo(_a, g_name, ax, _indexes):
 					try:
 						_g.removeContour(_g[partial_name_index(_g, x)])
 					except Exception as e:
+
 						warnings.warn("Partial Non Existent")
 					
 				_p = _g

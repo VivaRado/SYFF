@@ -9,6 +9,7 @@ from .css import *
 import re
 import ast
 import warnings
+from Lib.helpers import warning_format
 
 import pprint
 
@@ -263,10 +264,14 @@ def SYFF_RCB(
 							elif _a[0] == "get":
 
 								args = manage_form_list(_a[1])
-								print(args)
+								
 								#warnings.warn("partial get is not supported")
 								_r_m["fnc"] = "Partial"
-								_r_m["arg"] = [{"operation":_a[0],"source":args[0],"area": args[1]}]
+								_r_m["arg"] = [{"operation":_a[0],"source":args[0],"area": args[1],"rename":None}]
+
+								if len(args) == 3:
+
+									_r_m["arg"][0]["rename"] = args[2]
 
 
 						elif _n == "out":
