@@ -113,12 +113,32 @@ class Recomb(object):
 		path = tree.find('./{*}path')
 		# transforming / CHANGING
 		#
+		pathlist = parsePath(path.attrib['d'])
+
+		if "partial" in ax:
+			
+			complist = parseCompoundPath(path.attrib['d'])
+			inx_part = part_list(tree).index(ax["partial"])
+			g_partial = [complist[inx_part]][0]
+
+			t_path = translatePath(
+							g_partial,
+							x=ax["x"], 
+							y=ax["y"]
+						)
+
+			pathlist = sum(complist,[])
+
+		else:
+			
+			t_path = translatePath(
+						pathlist,
+						x=ax["x"], 
+						y=ax["y"]
+					)
+
 		path.attrib['d'] = formatPath(
-								translatePath(
-									parsePath(path.attrib['d']),
-									x=ax["x"], 
-									y=ax["y"]
-								)
+								pathlist
 							)
 		
 		glifnam = userNameToFileName(nam)
@@ -161,13 +181,13 @@ class Recomb(object):
 		tree_dest, svg_data_dest = parse_svg_path(file)
 		svg_data_dest.attrib['id'] = make_id(svg_data_dest.attrib['id'], nam, uni)
 		svg_str_dest = ET.tostring(svg_data_dest, encoding='utf8', method='xml')
-		p_ids = parse_partials(tree_dest)
-		part_name_list = [ x['position'] for x in p_ids ]
-		inx_part = []
+		
+		part_name_list = part_list(tree_dest)
+		nam_part = []
 		# Get Regional Fontex for function.
 		ufo_curr_inst_dir = os.path.join(self._d, self.current_font_ufo, self.current_font_instance_name)
 
-		#dest_part_path, g_name = self.get_partial(file, ax, inx_part, ufo_curr_inst_dir)
+		#dest_part_path, g_name = self.get_partial(file, ax, nam_part, ufo_curr_inst_dir)
 
 		if "type" not in ax.keys():
 			ax["type"] = "partial"
@@ -176,19 +196,19 @@ class Recomb(object):
 
 			if ax["operation"] == "keep":
 
-				inx_part = [x for x in part_name_list if x not in ax["area"]]
+				nam_part = [x for x in part_name_list if x not in ax["area"]]
 
 			elif ax["operation"] == "remove":			
 				
-				inx_part = ax["area"]
+				nam_part = ax["area"]
 
 			elif ax["operation"] == "copy":
 
-				inx_part = ax["area"]
+				nam_part = ax["area"]
 
 			elif ax["operation"] == "get":
 
-				inx_part = [ax["area"]]
+				nam_part = [ax["area"]]
 				
 				if ax["rename"] == None:
 					part_name_list.append(ax["area"])
@@ -206,27 +226,27 @@ class Recomb(object):
 
 				file = os.path.join(self._t,userNameToFileName(ax["source"]))
 
-			part_path, g_name = self.get_partial(file, ax, inx_part, ufo_curr_inst_dir)
+			part_path, g_name = self.get_partial(file, ax, nam_part, ufo_curr_inst_dir)
 
 		else:
 
-			inx_part = [ax["area"]]
-			part_path, g_name = self.get_partial(file, ax, inx_part, ufo_curr_inst_dir)
+			nam_part = [ax["area"]]
+			part_path, g_name = self.get_partial(file, ax, nam_part, ufo_curr_inst_dir)
 
 		path = tree_dest.find('./{*}path')
 		new_list = []
 
 		for x in part_name_list:
-			if x not in inx_part and any(m in ax["operation"] for m in ["keep", "remove"]):
+			if x not in nam_part and any(m in ax["operation"] for m in ["keep", "remove"]):
 				fs = '{type:part,position:%s}' % (x)
 				new_list.append(fs)
 			elif ax["operation"] == "copy":
-				if x in inx_part:
+				if x in nam_part:
 
-					if len(inx_part) > 1:
-						copy_name = inx_part[1]
+					if len(nam_part) > 1:
+						copy_name = nam_part[1]
 					else:
-						copy_name = self.assign_copy_number(x, inx_part[0],path.attrib["id"])
+						copy_name = self.assign_copy_number(x, nam_part[0],path.attrib["id"])
 
 					fs = '{type:part,position:%s}' % (x)
 					fs_c = '{type:part,position:%s}' % (copy_name)
@@ -408,6 +428,9 @@ def parse_partials(t):
 			p_ids.append( parse_fontex(pi) )
 	return p_ids
 
+def part_list(t):
+
+	return [ x["position"] for x in parse_partials(t) ]
 
 def parse_fontex(fx):
 	json_data = {}
@@ -488,21 +511,30 @@ def manage_compound_from_svg(fname, ax, _indexes):
 			p_inx = d_name_index(parse_partials(tree), x)
 			action_inx.append(p_inx)
 
-		if any(m in ax["operation"] for m in ["keep", "remove"]):
+		if "operation" in ax:
+		
+			if any(m in ax["operation"] for m in ["keep", "remove"]):
 
-			for i, c in enumerate(comp):
-				if i not in action_inx:
+				for i, c in enumerate(comp):
+					if i not in action_inx:
+						f_comp.append( formatPath(c) )
+
+			elif ax["operation"] == "copy":
+
+				for i, c in enumerate(comp):
 					f_comp.append( formatPath(c) )
+					if i in action_inx:
+						f_comp.append( formatPath(c) )
 
-		elif ax["operation"] == "copy":
+			elif ax["operation"] == "get":
 
-			for i, c in enumerate(comp):
-				f_comp.append( formatPath(c) )
-				if i in action_inx:
-					f_comp.append( formatPath(c) )
+				for i, c in enumerate(comp):
+					if i in action_inx:
+						f_comp.append( formatPath(c) )
 
-		elif ax["operation"] == "get":
-
+		else:
+			print(_indexes)
+			print(action_inx)
 			for i, c in enumerate(comp):
 				if i in action_inx:
 					f_comp.append( formatPath(c) )
@@ -515,13 +547,7 @@ def manage_compound_from_svg(fname, ax, _indexes):
 
 
 
-def svg_path_to_compound(_p):
 
-	typelist = [x[0] for x in _p]
-	indices = [idx for idx, s in enumerate(typelist) if 'M' in s]
-	indices.pop(0)
-	comp_path = [_p[i: j] for i, j in zip([0] + indices, indices + [None])]
-	return comp_path
 
 
 
