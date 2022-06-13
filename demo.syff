@@ -39,6 +39,7 @@ F [ E = "F, 0046" ] {
 	partial: remove("arm");
 	partial: copy("hand","hand.1");
 	partial: get("Y","leg","leg_t");
+	transform: translate("hand.1", -100, 10);
 }
 
 /*

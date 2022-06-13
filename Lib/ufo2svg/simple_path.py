@@ -167,6 +167,18 @@ def parsePath(d):
 		retval.append([outputCommand,params])
 	return retval
 
+def svg_path_to_compound(_p):
+
+	typelist = [x[0] for x in _p]
+	indices = [idx for idx, s in enumerate(typelist) if 'M' in s]
+	indices.pop(0)
+	comp_path = [_p[i: j] for i, j in zip([0] + indices, indices + [None])]
+	return comp_path
+
+def parseCompoundPath(d):
+
+	return [ parsePath(x) for x in svg_path_to_compound(d) ]
+
 def formatPath(a):
 	"""Format SVG path data from an array"""
 	return "".join([cmd + " ".join([str(p) for p in params]) for cmd, params in a])
