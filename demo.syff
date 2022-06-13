@@ -16,7 +16,7 @@ Y { out: "Y_"; }
 Ш [ Π = "uni0428, 0428" ] {
 	transform: fontex("width","right", 100, 0);
 	transform: mirrorX();
-	transform: mirrorY();
+	/*transform: mirrorY();*/
 	
 }
 
@@ -46,7 +46,7 @@ F [ E = "F, 0046" ] {
 	partial: get("Y","leg","leg_t");
 	transform: translate("hand.1", -100, 10);
 	transform: mirrorX("hand.1");
-	transform: mirrorY("hand.1");
+	/*transform: mirrorY("hand.1");*/
 }
 
 /*
