@@ -10,7 +10,6 @@ import os
 
 from Lib.recombination.recombinator import Recomb
 
-
 #
 args = ArgumentParser()
 args.add_argument("-s", "--source", dest="source",
@@ -43,19 +42,12 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 if faults == False:
 
 	rc = Recomb()
-
 	rc.conv(dir_path)
-
 	syff_file = parser.parseString(Path(args.source).read_text())
-	
 	syff_rcb = converter.SYFF_RCB(syff_file)
-	#
 	print("CONVERTED SYFF TO RCB")
-	#
 	print(syff_rcb)
-	#
 	rc.rcb(syff_rcb, dir_path)
-	#
 	print("DONE!")
-#
+
 

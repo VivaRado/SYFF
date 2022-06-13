@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="Pi" format="1">
+<glyph name="Pi" format="2">
   <advance width="538" height="650"/>
   <unicode hex="03A0"/>
   <outline>
@@ -12,8 +12,8 @@
       <point x="52" y="25" type="line"/>
       <point x="0" y="25" type="line"/>
       <point x="0" y="0" type="line"/>
-      <point x="129" y="0" type="line"/>
-      <point x="129" y="25" type="line"/>
+      <point x="99" y="0" type="line"/>
+      <point x="99" y="25" type="line"/>
       <point x="77" y="25" type="line"/>
       <point x="77" y="594" type="line"/>
       <point x="112" y="625" type="line"/>
