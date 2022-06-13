@@ -175,7 +175,9 @@ class Recomb(object):
 			bbox_width = abs(bbox[0][0]) - abs(bbox[-1][0])
 
 			if _h:
-				
+
+				reverse_path(g_partial)
+
 				x_move = 0
 				y_move = (pbbox_height*2) + (bbox_height*2)
 
@@ -201,7 +203,9 @@ class Recomb(object):
 			svg_string = ET.tostring(svg_data, encoding='utf8', method='xml')
 
 			if _h:
-				
+
+				reverse_path(pathlist)
+
 				x_move = 0
 				y_move = pbbox_height
 
@@ -444,6 +448,15 @@ class Recomb(object):
 						prevlet = out
 						ans[letter][fnam]["out"].append(out)
 
+
+def reverse_path(path):
+	#
+	path.reverse()
+	#
+	path[0][0] = "M"
+	path[-1][0] = "L"
+	#
+	return path
 
 def get_glif_coord(f_g, _type):
 	p_arr = []
