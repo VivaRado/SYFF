@@ -121,25 +121,23 @@ class Recomb(object):
 			inx_part = part_list(tree).index(ax["partial"])
 			g_partial = [complist[inx_part]][0]
 
-			t_path = translatePath(
+			translatePath(
 							g_partial,
 							x=ax["x"], 
 							y=ax["y"]
-						)
+						 )
 
 			pathlist = sum(complist,[])
 
 		else:
 			
-			t_path = translatePath(
-						pathlist,
-						x=ax["x"], 
-						y=ax["y"]
-					)
+			translatePath(
+							pathlist,
+							x=ax["x"], 
+							y=ax["y"]
+						 )
 
-		path.attrib['d'] = formatPath(
-								pathlist
-							)
+		path.attrib['d'] = formatPath( pathlist )
 		
 		glifnam = userNameToFileName(nam)
 		save_svg_file(file,glifnam,tree)
@@ -151,24 +149,79 @@ class Recomb(object):
 		tree, svg_data = parse_svg_path(file)
 		svg_data.attrib['id'] = make_id(svg_data.attrib['id'], nam, uni)
 		path = tree.find('./{*}path')
-		_h = ax == "horizontal"
-		_v = ax == "vertical"
-		svg_string = ET.tostring(svg_data, encoding='utf8', method='xml')
-		anchors = get_shape_points(svg_string,nam)
 		
-		bbox = bounding_box(anchors[0])
-		bbox_height = bbox[0][1]
-		path.attrib['d'] = formatPath(
-								translatePath(
-									flipPath(
-										parsePath(path.attrib['d']), 
-										horizontal=_h, 
-										vertical=_v
-									),
-									x=0,
-									y=bbox_height
-								)
-							)
+		print("---")
+		print(nam)
+		print(ax)
+
+		_h = ax["orientation"] == "horizontal"
+		_v = ax["orientation"] == "vertical"
+		#
+		pathlist = parsePath(path.attrib['d'])
+
+		anchors = get_svg_points(pathlist)
+		bbox_parent = bounding_box(anchors)
+		pbbox_height = bbox_parent[0][1] + bbox_parent[-1][1] # improve take note bbox
+		pbbox_width = bbox_parent[0][0] + bbox_parent[-1][0]
+
+		if "partial" in ax:
+			
+			complist = parseCompoundPath(path.attrib['d'])
+			inx_part = part_list(tree).index(ax["partial"])
+			g_partial = [complist[inx_part]][0]
+			anchors = get_svg_points(g_partial)
+			bbox = bounding_box(anchors)
+			bbox_height = abs(bbox[0][1]) - abs(bbox[-1][1])
+			bbox_width = abs(bbox[0][0]) - abs(bbox[-1][0])
+
+			if _h:
+				
+				x_move = 0
+				y_move = (pbbox_height*2) + (bbox_height*2)
+
+			else:
+
+				x_move = -bbox_width
+				y_move = 0
+
+			translatePath(
+				flipPath(
+					g_partial, 
+					horizontal=_h, 
+					vertical=_v
+				),
+				x= x_move,
+				y= y_move
+			)
+
+			pathlist = sum(complist,[])
+
+		else:
+			
+			svg_string = ET.tostring(svg_data, encoding='utf8', method='xml')
+
+			if _h:
+				
+				x_move = 0
+				y_move = pbbox_height
+
+			else:
+
+				x_move = pbbox_width
+				y_move = 0
+
+			translatePath(
+				flipPath(
+					pathlist, 
+					horizontal=_h, 
+					vertical=_v
+				),
+				x= x_move,
+				y= y_move
+			)
+
+		path.attrib['d'] = formatPath( pathlist )
+		
 		# saving / SAME
 		glifnam = userNameToFileName(nam)
 		save_svg_file(file,glifnam,tree)
@@ -287,14 +340,15 @@ class Recomb(object):
 		#
 		# transforming / CHANGING
 		svg_string = ET.tostring(svg_data, encoding='utf8', method='xml')
-		anchors = get_shape_points(svg_string,nam)
+		#anchors = get_shape_points(svg_string,nam)
 		#print("CONTOUR POINT COORDINATES")
 		ufo_fontex_dir = os.path.join(self.current_font_ufo,self.current_fontex_ufo)
 		fontex_anchors = self.get_fontex(file, ax, None, ufo_fontex_dir)
+
 		path.attrib['d'] = formatPath(
 								translatePathInArea(
 									parsePath(path.attrib['d']), 
-									area=fontex_anchors[0], 
+									area=fontex_anchors, 
 									x=ax["x"], 
 									y=ax["y"]
 								)
@@ -316,40 +370,47 @@ class Recomb(object):
 			k_name = p_name.rsplit(".")[0]
 		return nam.rsplit(".")[0]+"."+str(counts[k_name]).rsplit(".")[0]
 	#
-	def get_partial(self, fname, ax, _indexes, ufo_dir):
+	def get_partial(self, fname, ax, _indexes, ufo_dir, fontex = False):
 	
 		_a = os.path.join(self._d, ufo_dir)
 		glif_names = get_glif_names_plist(_a)
 		svg_names = get_svg_names(self._t)
 		g_name = fname.split("/")[-1]
 
-		if g_name in glif_names and g_name not in svg_names:
+		if g_name in glif_names and fontex:
 
-			#print("PARTIAL FOUND AS UFO")
 			the_path = manage_compound_from_ufo(_a, g_name, ax, _indexes)
-
-		elif g_name in glif_names and g_name in svg_names:
-
-			#print("PARTIAL FOUND AS SVG", fname, _indexes)
-			the_path = manage_compound_from_svg(fname, ax, _indexes)
 
 		else:
 
-			#if g_name in svg_names:
-			# Did not find the partial in the glyphs of the UFO will look in the SVGs
-			#print("PARTIAL FOUND AS SVG", fname)
+			if g_name in glif_names and g_name not in svg_names and not fontex:
 
-			the_path = manage_compound_from_svg(fname, ax, _indexes)
+				#print("PARTIAL FOUND AS UFO")
+				the_path = manage_compound_from_ufo(_a, g_name, ax, _indexes)
+
+			elif g_name in glif_names and g_name in svg_names:
+
+				#print("PARTIAL FOUND AS SVG", fname, _indexes)
+				the_path = manage_compound_from_svg(fname, ax, _indexes)
+
+			else:
+
+				#if g_name in svg_names:
+				# Did not find the partial in the glyphs of the UFO will look in the SVGs
+				#print("PARTIAL FOUND AS SVG", fname)
+
+				the_path = manage_compound_from_svg(fname, ax, _indexes)
 
 
 		return the_path, g_name
 
 
-	def get_fontex(self, fname, ax, _indexes, fins):
+	def get_fontex(self, fname, ax, _indexes, floc):
 
-		part_path, g_name = self.get_partial(fname, ax, _indexes, fins)
-		svg_string = ET.tostring(part_path, encoding='utf8', method='xml')
-		anchors = get_shape_points(svg_string,g_name)
+		part_path, g_name = self.get_partial(fname, ax, _indexes, floc, True)
+		pathlist = parsePath(part_path.attrib['d'])
+		anchors = get_svg_points(pathlist)
+
 		return anchors
 
 	def rcb(self, ins, _dir):
@@ -399,13 +460,24 @@ def get_glif_coord(f_g, _type):
 
 	return p_arr
 
+def get_svg_points(svg_data, compound = False):
+
+	if compound:
+		
+		return  sum([[ y[1] for y in x ] for x in svg_data],[]) 
+
+	else:
+
+		return  [ y[1] for y in svg_data ]
+
+'''
 def get_shape_points(svg_string,nam):
 	glif = svg2glif(svg_string, nam)
 	m_glif = make_glyph(glif,nam)
 	anchors = get_glif_coord(m_glif, 'corner')
 
 	return anchors
-
+'''
 
 def make_glyph(_g_dat,_name):
 	_let = _name

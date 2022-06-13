@@ -236,14 +236,17 @@ def SYFF_RCB(
 							elif any(m == _a[0] for m in ["mirrorx", "mirrory"]):
 								
 								_r_m["fnc"] = "Mirror"
-
-								if len(_a[1]) > 0:
-									warnings.warn("mirrorX and mirrorY are letter only, partial mirroring is not supported.")
+								_r_m["arg"] = [{}]
 
 								if _a[0] == "mirrorx":
-									_r_m["arg"] = ["horizontal"]
+									_r_m["arg"][0]["orientation"] = "horizontal"
 								elif _a[0] == "mirrory":
-									_r_m["arg"] = ["vertical"]
+									_r_m["arg"][0]["orientation"] = "vertical"
+
+								if len(_a[1]) > 0:
+
+									_r_m["arg"][0]["partial"] = _a[1]
+
 
 							elif _a[0] == "fontex":
 

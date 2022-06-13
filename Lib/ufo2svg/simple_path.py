@@ -242,53 +242,49 @@ def translatePathInArea(p, area, x, y):
 	return p
 
 #
-def flipPath(p, horizontal, vertical):
-	#
+def flipPath(p, horizontal, vertical): # improve take note bbox
+
 	for cmd,params in p:
 		defs = pathdefs[cmd]
 		for i in range(defs[1]):
+
 			if defs[3][i] == 'x':
-				#
-				if horizontal:
-					#
-					params[i] = params[i]
-					#
-				else:
-					#
-					if params[i] < 0:
-						#
-						params[i] = abs(params[i])
-						#
-					else:
-						#
-						if params[i] == 0:
-							params[i] = params[i]
-						else:
-							params[i] = -abs(params[i])
-						#
-					#
-				#
-			elif defs[3][i] == 'y':
-				#
 				if vertical:
-					#
-					params[i] = params[i]
-					#
-				else:
-					#
-					if params[i] < 0:
-						#
-						params[i] = abs(params[i])
-						#
+					if params[i] == 0:
+						params[i] = params[i]
 					else:
-						#
-						if params[i] == 0:
-							params[i] = params[i]
+						if params[i] < 0:
+							params[i] = abs(params[i])
 						else:
 							params[i] = -abs(params[i])
-						#
-					#
-				#
+				else:
+					if params[i] == 0:
+						params[i] = params[i]
+					else:
+						if params[i] < 0:
+							params[i] = -abs(params[i])
+						else:
+							params[i] = abs(params[i])
+
+			elif defs[3][i] == 'y':
+				if vertical:
+					if params[i] == 0:
+						params[i] = params[i]
+					else:
+						if params[i] < 0:
+							params[i] = -abs(params[i])
+						else:
+							params[i] = abs(params[i])
+
+				else:
+					if params[i] == 0:
+						params[i] = params[i]
+					else:
+						if params[i] < 0:
+							params[i] = abs(params[i])
+						else:
+							params[i] = -abs(params[i])
+
 	return p
 
 def scalePath(p, x, y):
