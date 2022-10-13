@@ -4,8 +4,8 @@ _old*
 _old/
 __pycache__*
 __pycache__/
-temp*
-temp/
+/temp*
+/temp/
 *.pyc
 *.pyo
 .DS_Store

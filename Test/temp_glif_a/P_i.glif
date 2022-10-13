@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Pi" format="1">
+  <outline>
+    <contour>
+      <point x="487.0" y="25.0" type="line"/>
+      <point x="487.0" y="604.0" type="line"/>
+      <point x="434.0" y="650.0" type="line"/>
+      <point x="105.0" y="650.0" type="line"/>
+      <point x="52.0" y="604.0" type="line"/>
+      <point x="52.0" y="25.0" type="line"/>
+      <point x="0.0" y="25.0" type="line"/>
+      <point x="0.0" y="0.0" type="line"/>
+      <point x="99.0" y="0.0" type="line"/>
+      <point x="99.0" y="25.0" type="line"/>
+      <point x="77.0" y="25.0" type="line"/>
+      <point x="77.0" y="594.0" type="line"/>
+      <point x="112.0" y="625.0" type="line"/>
+      <point x="424.0" y="625.0" type="line"/>
+      <point x="462.0" y="594.0" type="line"/>
+      <point x="462.0" y="25.0" type="line"/>
+      <point x="410.0" y="25.0" type="line"/>
+      <point x="410.0" y="0.0" type="line"/>
+      <point x="539.0" y="0.0" type="line"/>
+      <point x="539.0" y="25.0" type="line"/>
+    </contour>
+  </outline>
+</glyph>
