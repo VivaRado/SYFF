@@ -5,8 +5,8 @@ Overview:
 gantt
     title SYFF (Synthetic Font Functions)
     dateFormat  YYYY-MM-DD
-    section Aeolus
-    AEL-0001 Aeolus Initial Letters Design (thn,reg,bld,blk):           done, des1,  2022-04-01, 2022-04-15
+    section Aeolum
+    AEO-0001 Aeolum Initial Letters Design (thn,reg,bld,blk):           done, des1,  2022-04-01, 2022-04-15
     section SYFF
     SYFF-0001 Basic Cascading Font Sheet Implementation:                done, des2,  2022-04-16, 2022-05-26
     SYFF-0002 SYFF Parsing:                                             done, des3,  2022-05-26, 2022-05-27
@@ -20,9 +20,9 @@ gantt
 
 
 *  Current:
-    *  ~~**AEL-0001** / from April 01 2022 to April 15 2022~~:
-        *  **Aeolus ∞1.000**
-            *  Design of the first 9 letters of Aeolus
+    *  ~~**AEO-0001** / from April 01 2022 to April 15 2022~~:
+        *  **Aeolum ∞1.000**
+            *  Design of the first 9 letters of Aeolum
     *  ~~**SYFF-0001** / from April 16 2022 to May 26 2022~~:
         *  **Recombinator ∞1.000**
         *  **Copy ∞1.000**
@@ -43,6 +43,6 @@ gantt
 
 Task Codes:
 
-*  AEL-∞-∞: Aeolus Test Font
+*  AEO-∞-∞: Aeolum Test Font
 *  SYFF-∞-∞: Synthetic Font Functions
 *  DOC-∞-∞: Documentation

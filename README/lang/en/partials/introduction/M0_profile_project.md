@@ -25,5 +25,5 @@ SYFF (Synthetic Font Functions) is a set of cascading functions that recombine a
 
 *   Project Name: SYFF (Synthetic Font Functions)
 *   Code Name: Recombinator
-*   Test Type Family: Aeolus
+*   Test Type Family: Aeolum
 *   Proposal Date: 28/05/2022

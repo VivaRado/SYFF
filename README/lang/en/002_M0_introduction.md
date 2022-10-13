@@ -100,7 +100,7 @@
 
 *  **Deliverables** Components ∞0.001:
 	*  SYFF (Synthetic Font Functions)
-	*  Aeolus Font
+	*  Aeolum Font
 	
 ---
 
@@ -112,7 +112,7 @@
 *  **Duration** of SYFF ∞2.00:
 	*  Stakeholder Decision Pending.
 
-*  **Duration** of Aeolus ∞1.00:
+*  **Duration** of Aeolum ∞1.00:
 	*  Depends on SYFF ∞1.00.
 
 ---

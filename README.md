@@ -50,7 +50,7 @@ SYFF (Synthetic Font Functions) is a set of cascading functions that recombine a
 
 *   Project Name: SYFF (Synthetic Font Functions)
 *   Code Name: Recombinator
-*   Test Type Family: Aeolus
+*   Test Type Family: Aeolum
 *   Proposal Date: 28/05/2022
 
 
@@ -239,7 +239,7 @@ To make the idea of using SYFF (Synthetic Font Functions) functions the norm dur
 
 *  **Deliverables** Components ∞0.001:
 	*  SYFF (Synthetic Font Functions)
-	*  Aeolus Font
+	*  Aeolum Font
 	
 ---
 
@@ -255,7 +255,7 @@ To make the idea of using SYFF (Synthetic Font Functions) functions the norm dur
 *  **Duration** of SYFF ∞2.00:
 	*  Stakeholder Decision Pending.
 
-*  **Duration** of Aeolus ∞1.00:
+*  **Duration** of Aeolum ∞1.00:
 	*  Depends on SYFF ∞1.00.
 
 ---
@@ -984,8 +984,8 @@ Overview:
 gantt
     title SYFF (Synthetic Font Functions)
     dateFormat  YYYY-MM-DD
-    section Aeolus
-    AEL-0001 Aeolus Initial Letters Design (thn,reg,bld,blk):           done, des1,  2022-04-01, 2022-04-15
+    section Aeolum
+    AEO-0001 Aeolum Initial Letters Design (thn,reg,bld,blk):           done, des1,  2022-04-01, 2022-04-15
     section SYFF
     SYFF-0001 Basic Cascading Font Sheet Implementation:                done, des2,  2022-04-16, 2022-05-26
     SYFF-0002 SYFF Parsing:                                             done, des3,  2022-05-26, 2022-05-27
@@ -999,9 +999,9 @@ gantt
 
 
 *  Current:
-    *  ~~**AEL-0001** / from April 01 2022 to April 15 2022~~:
-        *  **Aeolus ∞1.000**
-            *  Design of the first 9 letters of Aeolus
+    *  ~~**AEO-0001** / from April 01 2022 to April 15 2022~~:
+        *  **Aeolum ∞1.000**
+            *  Design of the first 9 letters of Aeolum
     *  ~~**SYFF-0001** / from April 16 2022 to May 26 2022~~:
         *  **Recombinator ∞1.000**
         *  **Copy ∞1.000**
@@ -1022,7 +1022,7 @@ gantt
 
 Task Codes:
 
-*  AEL-∞-∞: Aeolus Test Font
+*  AEO-∞-∞: Aeolum Test Font
 *  SYFF-∞-∞: Synthetic Font Functions
 *  DOC-∞-∞: Documentation
 
