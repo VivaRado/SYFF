@@ -79,21 +79,22 @@ from Lib.helpers import warning_format
 
 class Recomb(object):
 	def __init__(self):
+			
+		print("Init Recomb")
 		
-		self.current_font_ufo = "Test/DF_A/"
-		self.current_fontex_ufo = "DF_A_001-FONTEX.ufo"
-		self.current_font_instance_name = "DF_A_001-Light.ufo"
+		# self.current_fontex_ufo = "DF_A_001-FONTEX.ufo"
+		# self.current_font_instance_name = "DF_A_001-Light.ufo"
 
-	def conv(self, _dir):
+	def conv(self):
 
-		self._d = _dir
-		self._s = os.path.join(_dir, "Test", "DF_A")
-		self._t = os.path.join(_dir, "Test", "temp_d")
+		self.current_font_ufo = self._s
 
 		convertUFOToSVGFiles(self, 
-			OpenFont(os.path.join(self._s,self.current_font_instance_name)), 
-			self.current_font_instance_name, 
-			[])
+			OpenFont(
+				os.path.join(self._s,self.current_font_instance_name)), 
+				self.current_font_instance_name, 
+				[]
+			)
 
 	def t_copy(self, file, nam, uni, _dir, ax=False):
 		#
@@ -502,8 +503,6 @@ def make_glyph(_g_dat,_name):
 
 	return f_g
 
-#################################################
-
 def parse_partials(t):
 	path = t.find('./{*}path')
 	p_id = path.attrib["id"] if "id" in path.attrib.keys() else None
@@ -547,8 +546,6 @@ def get_svg_names(_a):
 	svg_names = [f.split(".svg")[0] for f in os.listdir(_a) if os.path.isfile(join(_a, f))]
 
 	return svg_names
-
-#################################################
 
 def manage_compound_from_ufo(_a, g_name, ax, _indexes):
 
@@ -629,15 +626,6 @@ def manage_compound_from_svg(fname, ax, _indexes):
 
 	return p
 
-
-
-
-
-
-
-
-#################################################
-
 def fx_type_area_index(glyph, _type, _area):
 	i = 0
 	for x in glyph:
@@ -668,8 +656,6 @@ def make_id(_id, nam, uni):
 	#
 	return '__'.join([nam,uni,_id.split("__")[2]])
 	#
-
-#################################################
 
 ET.register_namespace("","http://www.w3.org/2000/svg")
 

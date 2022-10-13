@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """ Convert SVG paths to UFO glyphs.
 """
-# Author: Cosimo Lupo / Vivarado
+# Author: Cosimo Lupo, Vivarado
 # Email: cosimo@anthrotype.com, support@vivarado.com
 # License: Apache Software License 2.0
 
@@ -38,10 +38,16 @@ def get_additional_info_from_svg_glyph(svg):
 
 	'''
 	dat = root.get("id")
+
+	print("GOT DAT")
+	print(dat)
 	#if len(paths):
 	return dat.split('__')
 	#else:
 	#	return "NONE"
+
+
+
 
 def svg2glif(svg, name, width=0, height=0, unicodes=None, transform=None,
 			 version=1):
@@ -55,34 +61,46 @@ def svg2glif(svg, name, width=0, height=0, unicodes=None, transform=None,
 		
 	add_info = get_additional_info_from_svg_glyph(svg)
 
-	glyph = SVGOutline.fromstring(svg, transform=transform)
+	root = ET.fromstring(svg)#.parse(svg_file)
+	#
+	if 'd' in root[0].attrib:
+		#
+		path_d = root[0].attrib['d']
+		#
+		if len(path_d) > 1:
+			pass
+		#
+		path_d = root[0].attrib['d']
+		if add_info[1] != "NONE":
+			#
+			flip_path = formatPath(flipPath(parsePath(path_d), horizontal=True, vertical=False))
+			root[0].attrib['d'] = flip_path
+			
+		svg_string = ET.tostring(root, encoding='utf8', method='xml').decode()
+		# print(flip_path)
+
+	glyph = SVGOutline.fromstring(svg_string, transform=transform)
 	glyph.name = add_info[0]
 	glyph.width = width
 	glyph.height = height
 	glyph.unicodes = unicodes or []
+	#
 	#
 	glif_string = writeGlyphToString(glyph.name,
 							  glyphObject=glyph,
 							  drawPointsFunc=glyph.drawPoints,
 							  formatVersion=version)
 	#
-	if add_info != "NONE":
-		#
+	if add_info[1] == "NONE":
+		
 		tree = ET.fromstring(glif_string)
-		#
-		_adv = ET.Element("advance", width=add_info[2])
-		tree.insert(0,_adv)
-		#
-		if add_info[1] != "NONE":
-			_uni = ET.Element("unicode", hex=add_info[1])
-			tree.insert(1,_uni)
-		#
-		xmlstr = ET.tostring(tree, encoding='utf8', method='xml').decode("utf-8")
-		#
-	else:
-		#
-		xmlstr = glif_string
-		#
+		for outline in tree.findall('outline'):
+			tree.remove(outline)
+
+		glif_string = ET.tostring(tree, encoding='utf8', method='xml').decode("utf-8")
+
+	xmlstr = glif_string
+	#
 	return xmlstr
 
 class SVGOutline(object):

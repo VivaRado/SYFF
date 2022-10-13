@@ -906,9 +906,10 @@ gantt
     section SYFF
     SYFF-0001 Basic Cascading Font Sheet Implementation:                done, des2,  2022-04-16, 2022-05-26
     SYFF-0002 SYFF Parsing:                                             done, des3,  2022-05-26, 2022-05-27
-    SYFF-0003 Further Implementation of Alteration Functions:                 des5,  2022-06-01, 2022-06-30
+    SYFF-0003 Further Implementation of Alteration Functions:           done, des5,  2022-06-01, 2022-06-30
+    SYFF-0004 SVG to GLIF:                                                    des6,  2022-10-13, 2022-10-31
     section Documentation
-    DOC-0001 Documentation:                                                   des4,  2022-05-27, 2022-05-31
+    DOC-0001 Documentation:                                             done, des4,  2022-05-27, 2022-05-31
 
 
 ```
@@ -925,11 +926,13 @@ gantt
         *  **Fontex ∞1.000**
     *  ~~**SYFF-0002** / from May 26 2022 to May 27 2022~~:
         *  **SYFF Parsing ∞1.000**
-    *  **DOC-0001 ∞1.000** / from May 27 2022 to May 31 2022:
+    *  ~~**DOC-0001 ∞1.000** / from May 27 2022 to May 31 2022~~:
         *  Formulating the Documentation Structure
         *  Explaining the Alteration Functions
-    *  **SYFF-0003** / from June 01 2022 to June 30 2022:
+    *  ~~**SYFF-0003** / from June 01 2022 to June 30 2022~~:
         *  Implementing the Alteration Functions
+    *  **SYFF-0004** / from October 13 2022 to October 31 2022:
+        *  Implementing SVG to GLIF
 
 <small>Strike Through Equals Completion</small>
 

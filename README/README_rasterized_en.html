@@ -1,0 +1,832 @@
+<h2><strong>Preface</strong></h2>
+<p><strong>SYFF</strong> (Synthetic Font Functions), IPA: [/saɪff/ &gt;= /sɪff/], "σύνθεση" (sýnthesi), is an Open Source project of <strong>VivaRado</strong>, Think of it as CSS but for fonts.</p>
+<div class="header_logo">
+<p><img alt="Screenshot" src="assets/media/SYFF_logo.png"/></p>
+</div>
+<div class="sidebar">
+<h3><strong>Contents</strong></h3>
+<ol>
+<li><strong>Preface</strong></li>
+<li><strong>Introduction</strong>
+<ol>
+<li><strong>Profile</strong></li>
+<li><strong>Project Overview</strong></li>
+<li><strong>Phase Introduction</strong>
+<ol>
+<li><strong>Initiation Phase</strong>
+<ol>
+<li><strong>Business Case</strong>
+<ol>
+<li><strong>Strategic case</strong></li>
+<li><strong>Management case</strong>
+<ol>
+<li><strong>Achievements Plan</strong></li>
+</ol></li>
+</ol></li>
+<li><strong>Project Charter</strong>
+<ol>
+<li><strong>Project Introduction</strong>
+<ol>
+<li><strong>Project Statements</strong></li>
+</ol></li>
+<li><strong>Project Goals</strong></li>
+<li><strong>Deliverables</strong></li>
+<li><strong>Duration</strong></li>
+</ol></li>
+</ol></li>
+<li><strong>Planning Phase</strong>
+<ol>
+<li><strong>Project Plan</strong>
+<ol>
+<li><strong>Design</strong></li>
+<li><strong>Production</strong></li>
+<li><strong>Syntax</strong>
+<ol>
+<li><strong>Blocks</strong></li>
+<li><strong>Instance Query</strong></li>
+</ol></li>
+<li><strong>Alteration Functions</strong>
+<ol>
+<li><strong>Copy</strong></li>
+<li><strong>Translate</strong></li>
+<li><strong>Mirror</strong></li>
+<li><strong>Fontex</strong></li>
+<li><strong>Partial</strong></li>
+<li><strong>Logging</strong></li>
+</ol></li>
+<li><strong>Examples</strong></li>
+<li><strong>Delivery</strong></li>
+<li><strong>Usage</strong></li>
+</ol></li>
+<li><strong>Work Plan</strong>
+<ol>
+<li><strong>Task Assignments</strong></li>
+<li><strong>Dependencies</strong></li>
+</ol></li>
+<li><strong>Schedule Plan</strong>
+<ol>
+<li><strong>Timeline</strong></li>
+</ol></li>
+<li><strong>Stakeholders</strong>
+<ol>
+<li><strong>Personnel Plan</strong></li>
+<li><strong>Communication Plan</strong></li>
+</ol></li>
+<li><strong>Quality Plan</strong>
+<ol>
+<li><strong>Quality Targets</strong></li>
+<li><strong>Quality Management</strong></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol>
+<h3>Glossary</h3>
+<ol>
+<li><strong>Glossary</strong></li>
+</ol>
+<h3>Reference</h3>
+<ol>
+<li><strong>Reference</strong></li>
+</ol>
+</div>
+<h2><strong>Introduction</strong></h2>
+<p>SYFF (Synthetic Font Functions) is a set of cascading functions that recombine and alter a set of initially provided letters to create new letters.</p>
+<h4>Contributors:</h4>
+<ul>
+<li>VivaRado <a href="mailto:support@vivarado.com" rel="noopener" target="_blank">support@vivarado.com</a></li>
+<li>Andreas Kalpakidis</li>
+<li>Madina Akhmatova</li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Profile</strong></h3>
+<ul>
+<li>Company: VivaRado LLP</li>
+<li>Designer: Andreas Kalpakidis</li>
+<li>Twitter: <a href="https://twitter.com/VivaRado" rel="noopener" target="_blank">@vivarado</a></li>
+<li>Google Group:<a href="https://groups.google.com/a/vivarado.com/forum/#!forum/typography" rel="noopener" target="_blank">VivaRado Typography Google Group</a></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Project Overview</strong></h3>
+<ul>
+<li>Project Name: SYFF (Synthetic Font Functions)</li>
+<li>Code Name: Recombinator</li>
+<li>Test Type Family: Aeolus</li>
+<li>Proposal Date: 28/05/2022</li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction</strong></h3>
+<p>For the sake of simplicity we will only present the following phases:</p>
+<ul>
+<li>Initiation Phase</li>
+<li>Planning Phase</li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Initiation Phase</strong></h3>
+<ul>
+<li><p><strong>Initiation Phase</strong> Components ∞0.001:</p>
+<ol>
+<li><strong>Business Case</strong>:
+<ul>
+<li>Strategic case </li>
+<li>Management case</li>
+</ul></li>
+</ol></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Initiation Phase / Business Case</strong></h3>
+<h4>We want to get lots of letters from a few, by running recombining and altering functions whose instructions look like CSS.</h4>
+<p>While working with Advent the Variable variant, we noticed the multiplicity of instances that makes variable fonts great, is exactly what bores the human as a function has to be repeated across all of them. We decided to test a few functions that would take a set of initial letters and twist and stretch them to the point of creating the whole capital letter encoding of three languages, and <a href="https://github.com/VivaRado/SYFF/blob/main/Lit/recombinator.pdf" rel="noopener" target="_blank">here is the initial plan for that.</a>, since the script we call "recombination" was reusing letters after some functions where applied to them or cascading, a floating idea was to also make these instructions more approachable to the designer by making them appear similar to CSS.</p>
+<ul>
+<li><strong>Business Case</strong> Components ∞0.001:
+<ol>
+<li><strong>Strategic case</strong></li>
+<li><strong>Management case</strong>
+<ul>
+<li>Achievability</li>
+</ul></li>
+</ol></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Initiation Phase / Business Case / Strategic case</strong></h3>
+<p>The ability to have a set of simple looking instructions that reduce the repetitive nature of letters would increase the time spent on actually designing the look of the font and improve the time it takes to increase linguistic coverage and deploy the font. Most importantly you can still meddle with your font after the scripts are done doing what you told them.</p>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Initiation Phase / Business Case / Management case</strong></h3>
+<p>The management case tests the feasibility of the preferred option, in terms of its deliverability within various tolerances. </p>
+<h4>Achievability:</h4>
+<p>We have been working with editing fonts with code for a few years now and much of the code and font plumbing existed from projects like <a href="https://github.com/VivaRado/variomatic" rel="noopener" target="_blank">Variomatic</a> or <a href="https://github.com/VivaRado/VRD-Typography-Library" rel="noopener" target="_blank">VRD TYPL</a>, the one piece we needed was to make the otherwise complicated list of instructions inside the recombination script, a little more readable and implement a CSS like parser, for that we chose to harvest CSSUtils code.</p>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Initiation Phase / Business Case / Management case / Achievements Plan</strong></h3>
+<ol>
+<li><strong>Milestones</strong>
+<ol>
+<li>Recombination Script</li>
+<li>Synthetic Font Functions (SYFF Parsing)</li>
+</ol></li>
+<li><strong>Dependencies</strong>
+<ol>
+<li>In Lib</li>
+</ol></li>
+<li><strong>Skillset Requirements</strong>
+<ol>
+<li>Variable Font comprehension.</li>
+<li>Python Programming</li>
+<li>Web Application Development</li>
+<li>Type Design</li>
+<li>2D Vector Math</li>
+</ol></li>
+</ol>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Initiation Phase / Project Charter</strong></h3>
+<ul>
+<li><strong>Project Charter</strong> Components ∞0.001:
+<ul>
+<li>Project Introduction</li>
+<li>Project Goals</li>
+<li>Deliverables</li>
+<li>Duration</li>
+</ul></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Initiation Phase / Project Charter / Project Introduction</strong></h3>
+<ul>
+<li><p><strong>Project Introduction</strong> Components ∞0.001:</p>
+<ul>
+<li>Project Statements
+<ul>
+<li>Vision Statement</li>
+<li>Mission Statement</li>
+</ul></li>
+<li>Project Definition
+<ul>
+<li>Problem </li>
+<li>Opportunity</li>
+</ul></li>
+</ul></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Initiation Phase / Project Charter / Project Introduction / Project Statements</strong></h3>
+<h4>Vision Statement:</h4>
+<p>To make SYFF (Synthetic Font Functions) a viable tool in the belt of the type designer.</p>
+<h4>Mission Statement:</h4>
+<p>To make the idea of using SYFF (Synthetic Font Functions) functions the norm during font development and design.</p>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Initiation Phase / Project Charter / Project Goals</strong></h3>
+<ul>
+<li>Goals for ∞ 1.00:
+<ul>
+<li>Cascading recombining functions</li>
+<li>SYFF Parsing
+<ul>
+<li>Media Query Defined Instance</li>
+</ul></li>
+<li>Basic Alterations:
+<ul>
+<li>Copy</li>
+<li>Transform</li>
+<li>Mirror</li>
+<li>Fontex</li>
+<li>Partial</li>
+</ul></li>
+</ul></li>
+<li>Goals for ∞ 2.00:
+<ul>
+<li>Add to Alterations</li>
+</ul></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Initiation Phase / Project Charter / Deliverables</strong></h3>
+<ul>
+<li><strong>Deliverables</strong> Components ∞0.001:
+<ul>
+<li>SYFF (Synthetic Font Functions)</li>
+<li>Aeolus Font</li>
+</ul></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Initiation Phase / Project Charter / Duration</strong></h3>
+<ul>
+<li><p><strong>Duration</strong> of SYFF ∞1.00:</p>
+<ul>
+<li>01/04/2022 to 31/05/2022.</li>
+</ul></li>
+<li><p><strong>Duration</strong> of SYFF ∞2.00:</p>
+<ul>
+<li>Stakeholder Decision Pending.</li>
+</ul></li>
+<li><p><strong>Duration</strong> of Aeolus ∞1.00:</p>
+<ul>
+<li>Depends on SYFF ∞1.00.</li>
+</ul></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase</strong></h3>
+<p>The Planning Phase, is where the project solution is further developed in as much detail as possible and the steps necessary to meet the project’s objectives.
+The project's <strong>Work Plan / Project Plan</strong> is created outlining the activities, tasks, dependencies, and timeframes.</p>
+<p>The Planning Phase consists of:</p>
+<ol>
+<li><strong>Project Plan</strong>:</li>
+<li><strong>Work Plan</strong>:</li>
+<li><strong>Schedule Plan</strong>:</li>
+<li><strong>Stakeholders</strong></li>
+<li><strong>Quality Plan (PQP)</strong></li>
+</ol>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan</strong></h3>
+<p>Decide on the encoding sets and supported language scripts. Decide and plan the weights and how you will generate each weight. Understand the procedures and steps. Calculate or keep track of timelines, steps procedures and pitfalls.</p>
+<ol>
+<li><strong>Project Plan</strong> Components ∞0.001:
+<ol>
+<li><strong>Design</strong></li>
+<li><strong>Production</strong></li>
+<li><strong>Alteration Functions</strong></li>
+</ol></li>
+</ol>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Design</strong></h3>
+<p>BUMP</p>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Production</strong></h3>
+<p>BUMP</p>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Syntax</strong></h3>
+<ul>
+<li><p>The selector represents to the letter you want to create and the attribute in the square brackets represents the source of that letter.</p></li>
+<li><p>The declaration block contains one or more declarations separated by semicolons.</p></li>
+<li><p>Each declaration includes a SYFF property name and a value, separated by a colon.</p></li>
+<li><p>Multiple SYFF declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.</p></li>
+<li><p>SYFF selectors outside of Instance Queries, apply to all the instances of a given font. Selectors inside Instance Queries apply to specific instances of the font, like Media Queries with devices or sizes.</p></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Syntax / Blocks</strong></h3>
+<h4>Initial Letter Definitions:</h4>
+<pre><span></span><code class="codehilite css"><span class="nt">Π</span> <span class="p">{</span>
+
+    <span class="n">out</span><span class="p">:</span> <span class="s2">"P_i"</span><span class="p">;</span>
+
+<span class="p">}</span>
+</code></pre>
+<h4>Synthesized Letter Definitions:</h4>
+<pre><span></span><code class="codehilite css"><span class="c">/* produced (character) [ receiving (character) = "name, unicode" ] */</span>
+
+<span class="nt">Ш</span> <span class="o">[</span> <span class="nt">Π</span> <span class="o">=</span> <span class="s2">"uni0428, 0428"</span> <span class="o">]</span> <span class="p">{</span>
+
+    <span class="k">transform</span><span class="p">:</span> <span class="nf">fontex</span><span class="p">(</span><span class="s2">"width"</span><span class="p">,</span><span class="s2">"right"</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="k">transform</span><span class="p">:</span> <span class="nf">mirrorX</span><span class="p">();</span>
+
+<span class="p">}</span>
+</code></pre>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Syntax / Instance Query</strong></h3>
+<p>SYFF selectors outside of Instance Queries, apply to all the instances of a given font. Selectors inside Instance Queries apply to specific instances of the font, like Media Queries and devices or sizes.</p>
+<p><br/></p>
+<pre><span></span><code class="codehilite css"><span class="c">/* Define the existing letter */</span>
+
+<span class="nt">A</span> <span class="p">{</span>
+
+    <span class="n">out</span><span class="p">:</span> <span class="s2">"A_lpha"</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+
+<span class="c">/* Translate -50 for all instances */</span>
+
+<span class="nt">Α</span> <span class="o">[</span> <span class="nt">A</span> <span class="o">=</span> <span class="s2">"Alpha, 0391"</span> <span class="o">]</span> <span class="p">{</span>
+
+    <span class="k">transform</span><span class="p">:</span> <span class="nb">translate</span><span class="p">(</span><span class="mi">-50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="p">}</span>
+
+
+<span class="p">@</span><span class="k">instance</span> <span class="o">(</span><span class="s2">"bold"</span><span class="o">)</span> <span class="p">{</span>
+
+    <span class="c">/* Translate another -20 for only bold instance */</span>
+
+    <span class="nt">Α</span> <span class="o">[</span> <span class="nt">A</span> <span class="o">=</span> <span class="s2">"Alpha, 0391"</span> <span class="o">]</span> <span class="p">{</span>
+
+        <span class="k">transform</span><span class="p">:</span> <span class="nb">translate</span><span class="p">(</span><span class="mi">-20</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Alteration Functions</strong></h3>
+<p>Review and document the Alteration Functions:</p>
+<ul>
+<li><a href="https://github.com/VivaRado/SYFF#copy" rel="noopener" target="_blank">Copy</a></li>
+<li><a href="https://github.com/VivaRado/SYFF#translate" rel="noopener" target="_blank">Transform</a></li>
+<li><a href="https://github.com/VivaRado/SYFF#mirror" rel="noopener" target="_blank">Mirror</a></li>
+<li><a href="https://github.com/VivaRado/SYFF#fontex" rel="noopener" target="_blank">Fontex</a></li>
+<li><a href="https://github.com/VivaRado/SYFF#partial" rel="noopener" target="_blank">Partial</a></li>
+<li>Logging</li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Alteration Functions / Copy</strong></h3>
+<p>The definition of a SYFF rule is a copy function.</p>
+<p><br/></p>
+<pre><span></span><code class="codehilite css"><span class="nt">A</span> <span class="o">[</span> <span class="nt">B</span> <span class="o">=</span> <span class="s2">"name, unicode"</span> <span class="o">]</span> <span class="p">{}</span>
+</code></pre>
+<p><br/></p>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Alteration Functions / Translate</strong></h3>
+<p>Translate a partial or the whole letter.</p>
+<p><br/></p>
+<pre><span></span><code class="codehilite css"><span class="nt">A</span> <span class="o">[</span> <span class="nt">B</span> <span class="o">=</span> <span class="s2">"name, unicode"</span> <span class="o">]</span> <span class="p">{</span>
+
+    <span class="k">transform</span><span class="p">:</span> <span class="nb">translate</span><span class="p">(</span><span class="s2">"partial_name"</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">);</span>
+    <span class="k">transform</span><span class="p">:</span> <span class="nb">translate</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">);</span>
+
+<span class="p">}</span>
+</code></pre>
+<p><br/></p>
+<h4>Transform Translate Function:</h4>
+<pre><span></span><code class="codehilite css"><span class="nt">transform</span><span class="o">:</span> <span class="nt">translate</span><span class="o">(</span><span class="s2">"partial_name"</span><span class="o">,</span> <span class="nt">X</span><span class="o">,</span> <span class="nt">Y</span><span class="o">);</span>
+<span class="nt">transform</span><span class="o">:</span> <span class="nt">translate</span><span class="o">(</span><span class="nt">X</span><span class="o">,</span> <span class="nt">Y</span><span class="o">);</span>
+
+<span class="o">&lt;</span><span class="nt">transform</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">translate</span><span class="o">(</span> <span class="o">&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;?,</span> <span class="o">&lt;</span><span class="nt">number</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="nt">number</span><span class="o">&gt;</span>  <span class="o">)</span>
+</code></pre>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Alteration Functions / Mirror</strong></h3>
+<p>Mirror a partial or the whole letter.</p>
+<p><br/></p>
+<pre><span></span><code class="codehilite css"><span class="nt">A</span> <span class="o">[</span> <span class="nt">B</span> <span class="o">=</span> <span class="s2">"name, unicode"</span> <span class="o">]</span> <span class="p">{</span>
+
+    <span class="k">transform</span><span class="p">:</span> <span class="nf">mirrorX</span><span class="p">();</span>
+    <span class="k">transform</span><span class="p">:</span> <span class="nf">mirrorX</span><span class="p">(</span> <span class="s2">"hand_copy"</span> <span class="p">);</span>
+    <span class="k">transform</span><span class="p">:</span> <span class="nf">mirrorY</span><span class="p">();</span>
+    <span class="k">transform</span><span class="p">:</span> <span class="nf">mirrorY</span><span class="p">(</span> <span class="s2">"hand_copy"</span> <span class="p">);</span>
+
+<span class="p">}</span>
+</code></pre>
+<p><br/></p>
+<h4>Transform Mirror Function:</h4>
+<pre><span></span><code class="codehilite css"><span class="nt">transform</span><span class="o">:</span> <span class="nt">mirrorX</span><span class="o">();</span>
+<span class="nt">transform</span><span class="o">:</span> <span class="nt">mirrorY</span><span class="o">(</span><span class="s2">"hand_copy"</span><span class="o">);</span>
+
+<span class="o">&lt;</span><span class="nt">transform</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">mirrorX</span><span class="o">(</span> <span class="o">&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;?</span> <span class="o">)</span>
+<span class="o">&lt;</span><span class="nt">transform</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">mirrorY</span><span class="o">(</span> <span class="o">&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;?</span> <span class="o">)</span>
+</code></pre>
+<p><br/></p>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Alteration Functions / Fontex</strong></h3>
+<p>Fontex is defined as an instance like all the rest of the instances of your font, but it includes areas, instead of letters, defined by you for specific purposes.</p>
+<p><br/></p>
+<div class="img_narrow">
+<p><img alt="Screenshot" src="assets/media/P_i_fontex.svg"/></p>
+</div>
+<p><br/></p>
+<p>Here we can translate the points in the left width region.</p>
+<p><br/></p>
+<div class="img_narrow">
+<p><img alt="Screenshot" src="assets/media/P_i_fontex_translate.svg"/></p>
+</div>
+<p><br/></p>
+<pre><span></span><code class="codehilite css"><span class="nt">A</span> <span class="o">[</span> <span class="nt">B</span> <span class="o">=</span> <span class="s2">"name, unicode"</span> <span class="o">]</span> <span class="p">{</span>
+
+    <span class="k">transform</span><span class="p">:</span> <span class="nf">fontex</span><span class="p">(</span><span class="s2">"type"</span><span class="p">,</span><span class="s2">"position"</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">);</span>
+
+<span class="p">}</span>
+</code></pre>
+<p><br/></p>
+<h4>Transform Fontex Function:</h4>
+<pre><span></span><code class="codehilite css"><span class="nt">transform</span><span class="o">:</span> <span class="nt">fontex</span><span class="o">(</span><span class="s2">"type"</span><span class="o">,</span><span class="s2">"position"</span><span class="o">,</span> <span class="nt">X</span><span class="o">,</span> <span class="nt">Y</span><span class="o">);</span>
+
+<span class="o">&lt;</span><span class="nt">transform</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">fontex</span><span class="o">(</span> <span class="o">&lt;</span><span class="nt">type-string</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="nt">position-string</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="nt">number</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="nt">number</span><span class="o">&gt;</span> <span class="o">)</span>
+</code></pre>
+<p><br/></p>
+<p>Here is a GLIF with some areas defined by fontex, using these areas we can then manipulate the included points. Since fontex is tied to the first instance of your font, and we are dealing with a variable font, those points are at the same index and same partial across all other instances too.</p>
+<p>We can then use these fontex to move points and make letters wider or other detailing.</p>
+<p><br/></p>
+<pre><span></span><code class="codehilite xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;glyph</span> <span class="na">name=</span><span class="s">"Pi"</span> <span class="na">format=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;advance</span> <span class="na">width=</span><span class="s">"679"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;unicode</span> <span class="na">hex=</span><span class="s">"03A0"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;outline&gt;</span>
+    <span class="nt">&lt;contour&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"-25"</span> <span class="na">y=</span><span class="s">"-20"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="na">name=</span><span class="s">"{type:width,position:left}"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"152"</span> <span class="na">y=</span><span class="s">"-20"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"152"</span> <span class="na">y=</span><span class="s">"674"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"-25"</span> <span class="na">y=</span><span class="s">"674"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/contour&gt;</span>
+    <span class="nt">&lt;contour&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"385"</span> <span class="na">y=</span><span class="s">"-20"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="na">name=</span><span class="s">"{type:width,position:right}"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"562"</span> <span class="na">y=</span><span class="s">"-20"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"562"</span> <span class="na">y=</span><span class="s">"674"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"385"</span> <span class="na">y=</span><span class="s">"674"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/contour&gt;</span>
+  <span class="nt">&lt;/outline&gt;</span>
+<span class="nt">&lt;/glyph&gt;</span>
+</code></pre>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Alteration Functions / Partial</strong></h3>
+<p>You can divide your letter in partials which you can use across your other letters, you could also make one letter that includes all the partials you will need and then run the appropriate SYFF functions to create the whole font.</p>
+<p><br/></p>
+<pre><span></span><code class="codehilite css"><span class="nt">A</span> <span class="o">[</span> <span class="nt">B</span> <span class="o">=</span> <span class="s2">"name, unicode"</span> <span class="o">]</span> <span class="p">{</span>
+
+    <span class="n">partial</span><span class="p">:</span> <span class="nf">keep</span><span class="p">(</span><span class="s2">"partial_a"</span><span class="p">,</span> <span class="s2">"partial_b"</span><span class="p">);</span>
+    <span class="n">partial</span><span class="p">:</span> <span class="nf">remove</span><span class="p">(</span><span class="s2">"partial_b"</span><span class="p">);</span>
+    <span class="n">partial</span><span class="p">:</span> <span class="nf">get</span><span class="p">(</span><span class="s2">"Π"</span><span class="p">,</span><span class="s2">"partial_a"</span><span class="p">,</span> <span class="s2">"partial_a_rename"</span><span class="p">);</span>
+    <span class="n">partial</span><span class="p">:</span> <span class="nf">copy</span><span class="p">(</span><span class="s2">"partial_a"</span><span class="p">,</span> <span class="s2">"partial_a_rename"</span><span class="p">);</span>
+
+<span class="p">}</span>
+</code></pre>
+<p><br/></p>
+<h4>Partial Keep Function:</h4>
+<pre><span></span><code class="codehilite css"><span class="nt">partial</span><span class="o">:</span> <span class="nt">keep</span><span class="o">(</span><span class="s2">"partial_a"</span><span class="o">,</span> <span class="s2">"partial_b"</span><span class="o">);</span>
+
+<span class="o">&lt;</span><span class="nt">partial</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">keep</span><span class="o">(</span> <span class="o">[&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;</span> <span class="o">,</span> <span class="o">&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;,</span> <span class="o">...]</span> <span class="o">)</span>
+</code></pre>
+<h4>Partial Remove Function:</h4>
+<pre><span></span><code class="codehilite css"><span class="nt">partial</span><span class="o">:</span> <span class="nt">remove</span><span class="o">(</span><span class="s2">"partial_b"</span><span class="o">);</span>
+
+<span class="o">&lt;</span><span class="nt">partial</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">remove</span><span class="o">(</span> <span class="o">[&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;</span> <span class="o">,</span> <span class="o">&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;,</span> <span class="o">...]</span> <span class="o">)</span>
+</code></pre>
+<h4>Partial Get Function:</h4>
+<pre><span></span><code class="codehilite css"><span class="nt">partial</span><span class="o">:</span> <span class="nt">get</span><span class="o">(</span><span class="s2">"Π"</span><span class="o">,</span><span class="s2">"partial_a"</span><span class="o">,</span><span class="s2">"partial_a_rename"</span><span class="o">);</span>
+
+<span class="o">&lt;</span><span class="nt">partial</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">get</span><span class="o">(</span> <span class="o">&lt;</span><span class="nt">letter-name-string</span><span class="o">&gt;</span> <span class="o">,</span> <span class="o">&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="nt">partial-new-name-string</span><span class="o">&gt;</span> <span class="o">)</span>
+</code></pre>
+<h4>Partial Copy Function:</h4>
+<pre><span></span><code class="codehilite css"><span class="nt">partial</span><span class="o">:</span> <span class="nt">copy</span><span class="o">(</span><span class="s2">"partial_a"</span><span class="o">);</span>
+<span class="nt">partial</span><span class="o">:</span> <span class="nt">copy</span><span class="o">(</span><span class="s2">"partial_a"</span><span class="o">,</span> <span class="s2">"partial_a_rename"</span><span class="o">);</span>
+
+<span class="o">&lt;</span><span class="nt">partial</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">copy</span><span class="o">(</span> <span class="o">&lt;</span><span class="nt">partial-name-string</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="nt">partial-new-name-string</span><span class="o">&gt;?</span> <span class="o">)</span>
+
+<span class="o">&lt;</span><span class="nt">partial-new-name-string</span><span class="o">&gt;</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nt">string</span><span class="o">&gt;.&lt;</span><span class="nt">int</span><span class="o">&gt;</span>
+</code></pre>
+<p><br/></p>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Alteration Functions / Logging</strong></h3>
+<p>A basic log function should exist to cover some of the alteration functions.</p>
+<p><br/></p>
+<pre><span></span><code class="codehilite css"><span class="nt">A</span> <span class="o">[</span> <span class="nt">B</span> <span class="o">=</span> <span class="s2">"name, unicode"</span> <span class="o">]</span> <span class="p">{</span>
+
+  <span class="n">log</span><span class="p">:</span> <span class="c">/* In Planning */</span><span class="p">;</span>
+
+<span class="p">}</span>
+</code></pre>
+<p><br/></p>
+<h4>Logging Function:</h4>
+<pre><span></span><code class="codehilite css"><span class="nt">log</span><span class="o">:</span> <span class="c">/* In Planning */</span><span class="o">;</span>
+
+<span class="o">&lt;</span><span class="nt">log</span><span class="o">()&gt;</span> <span class="o">=</span> <span class="nt">function</span><span class="o">(</span> <span class="o">&lt;</span><span class="nt">string</span><span class="o">&gt;</span> <span class="o">,</span> <span class="o">&lt;</span><span class="nt">string</span><span class="o">&gt;?</span> <span class="o">)</span>
+</code></pre>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Examples</strong></h3>
+<h4>E to F to Γ to T</h4>
+<p>Here is an example of the letter E becoming F, then Γ and T. The first point of each part of this letter have a piece of code in the name definition that allows us access with SYFF.</p>
+<p><br/></p>
+<pre><span></span><code class="codehilite fontex">{type:part,position:hand}
+</code></pre>
+<p><br/></p>
+<p><br/></p>
+<div class="img_narrow">
+<p><img alt="Screenshot" src="assets/media/E_psilon_demo.svg"/></p>
+</div>
+<pre><span></span><code class="codehilite css"><span class="nt">Ε</span> <span class="p">{</span>
+
+    <span class="n">out</span><span class="p">:</span> <span class="s2">"E_psilon"</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+<span class="c">/* We create a new letter out of the Epsilon glyph */</span>
+
+<span class="nt">E</span> <span class="o">[</span> <span class="nt">Ε</span> <span class="o">=</span> <span class="s2">"E, 0045"</span> <span class="o">]</span> <span class="p">{}</span>
+
+<span class="c">/* </span>
+<span class="c">We create a new letter F and then use the partial function, </span>
+<span class="c">by keeping and removing the curved "leg" partial,</span>
+<span class="c">we need a new straight leg - stem for F and we can grab that from the letter I</span>
+<span class="c">*/</span>
+
+<span class="nt">F</span> <span class="o">[</span> <span class="nt">E</span> <span class="o">=</span> <span class="s2">"F, 0046"</span> <span class="o">]</span> <span class="p">{</span> 
+
+    <span class="n">partial</span><span class="p">:</span> <span class="nf">keep</span><span class="p">(</span><span class="s2">"hand"</span><span class="p">,</span><span class="s2">"arm"</span><span class="p">,</span><span class="s2">"tie"</span><span class="p">,</span><span class="s2">"leg"</span><span class="p">);</span> <span class="c">/* Demonstrating Partial Keep and Remove */</span>
+    <span class="n">partial</span><span class="p">:</span> <span class="nf">remove</span><span class="p">(</span><span class="s2">"leg"</span><span class="p">);</span>
+    <span class="n">partial</span><span class="p">:</span> <span class="nf">get</span><span class="p">(</span><span class="s2">"I"</span><span class="p">,</span><span class="s2">"leg"</span><span class="p">,</span><span class="s2">"leg_new"</span><span class="p">);</span> <span class="c">/* get and rename */</span>
+
+<span class="p">}</span>
+
+<span class="c">/* </span>
+<span class="c">We create a new letter Γ (Gamma) and then use the partial function and removing the "tie" partial.</span>
+<span class="c">*/</span>
+
+<span class="nt">Γ</span> <span class="o">[</span> <span class="nt">F</span> <span class="o">=</span> <span class="s2">"Gamma, 0393"</span> <span class="o">]</span> <span class="p">{</span> 
+
+    <span class="n">partial</span><span class="p">:</span> <span class="nf">remove</span><span class="p">(</span><span class="s2">"tie"</span><span class="p">);</span>
+
+<span class="p">}</span>
+
+<span class="c">/* </span>
+<span class="c">We create a new letter Τ (Tau) and then use the partial function and removing the "arm" partial, </span>
+<span class="c">then we copy the "hand" partial which gives us "hand_copy" (or hand_001 subject to change), </span>
+<span class="c">finally we mirror "hand_copy" and translate it -100 on the X axis.</span>
+<span class="c">*/</span>
+
+<span class="nt">Τ</span> <span class="o">[</span> <span class="nt">Γ</span> <span class="o">=</span> <span class="s2">"Tau, 03A4"</span> <span class="o">]</span> <span class="p">{</span> 
+
+    <span class="n">partial</span><span class="p">:</span> <span class="nf">remove</span><span class="p">(</span><span class="s2">"arm"</span><span class="p">);</span>
+    <span class="n">partial</span><span class="p">:</span> <span class="nf">copy</span><span class="p">(</span><span class="s2">"hand"</span><span class="p">,</span> <span class="s2">"hand_copy"</span><span class="p">);</span>
+    <span class="k">transform</span><span class="p">:</span> <span class="nf">mirrorY</span><span class="p">(</span> <span class="s2">"hand_copy"</span> <span class="p">);</span>
+    <span class="k">transform</span><span class="p">:</span> <span class="nb">translate</span><span class="p">(</span><span class="s2">"hand_copy"</span><span class="p">,</span> <span class="mi">-100</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="p">}</span>
+
+<span class="c">/*</span>
+<span class="c">And here is a copy of Tau to create T</span>
+<span class="c">*/</span>
+
+<span class="nt">Τ</span> <span class="o">[</span> <span class="nt">T</span> <span class="o">=</span> <span class="s2">"T, 0054"</span> <span class="o">]</span> <span class="p">{}</span>
+</code></pre>
+<p><br/></p>
+<p>The glif in question:</p>
+<p><br/></p>
+<pre><span></span><code class="codehilite xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;glyph</span> <span class="na">name=</span><span class="s">"Epsilon"</span> <span class="na">format=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;advance</span> <span class="na">width=</span><span class="s">"415"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;unicode</span> <span class="na">hex=</span><span class="s">"0395"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;outline&gt;</span>
+    <span class="nt">&lt;contour&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"115"</span> <span class="na">y=</span><span class="s">"559"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="na">name=</span><span class="s">"{type:part,position:hand}"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"115"</span> <span class="na">y=</span><span class="s">"650"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"415"</span> <span class="na">y=</span><span class="s">"650"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"415"</span> <span class="na">y=</span><span class="s">"580"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"360"</span> <span class="na">y=</span><span class="s">"559"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/contour&gt;</span>
+    <span class="nt">&lt;contour&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"0"</span> <span class="na">y=</span><span class="s">"338"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="na">name=</span><span class="s">"{type:part,position:arm}"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"0"</span> <span class="na">y=</span><span class="s">"579"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"64"</span> <span class="na">y=</span><span class="s">"650"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"119"</span> <span class="na">y=</span><span class="s">"650"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"119"</span> <span class="na">y=</span><span class="s">"559"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"105"</span> <span class="na">y=</span><span class="s">"559"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"91"</span> <span class="na">y=</span><span class="s">"544"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"91"</span> <span class="na">y=</span><span class="s">"338"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/contour&gt;</span>
+    <span class="nt">&lt;contour&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"278"</span> <span class="na">y=</span><span class="s">"293"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="na">name=</span><span class="s">"{type:part,position:tie}"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"67.6692"</span> <span class="na">y=</span><span class="s">"292.585"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"67.6692"</span> <span class="na">y=</span><span class="s">"383.588"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"320.628"</span> <span class="na">y=</span><span class="s">"383.715"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"320.628"</span> <span class="na">y=</span><span class="s">"336"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/contour&gt;</span>
+    <span class="nt">&lt;contour&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"91"</span> <span class="na">y=</span><span class="s">"342"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="na">name=</span><span class="s">"{type:part,position:leg}"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"91"</span> <span class="na">y=</span><span class="s">"106"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"105"</span> <span class="na">y=</span><span class="s">"91"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"119"</span> <span class="na">y=</span><span class="s">"91"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"119"</span> <span class="na">y=</span><span class="s">"0"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"64"</span> <span class="na">y=</span><span class="s">"0"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"0"</span> <span class="na">y=</span><span class="s">"71"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"0"</span> <span class="na">y=</span><span class="s">"342"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/contour&gt;</span>
+    <span class="nt">&lt;contour&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"115"</span> <span class="na">y=</span><span class="s">"0"</span> <span class="na">type=</span><span class="s">"line"</span> <span class="na">name=</span><span class="s">"{type:part,position:foot}"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"115"</span> <span class="na">y=</span><span class="s">"91"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"360"</span> <span class="na">y=</span><span class="s">"91"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"415"</span> <span class="na">y=</span><span class="s">"70"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;point</span> <span class="na">x=</span><span class="s">"415"</span> <span class="na">y=</span><span class="s">"0"</span> <span class="na">type=</span><span class="s">"line"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/contour&gt;</span>
+  <span class="nt">&lt;/outline&gt;</span>
+<span class="nt">&lt;/glyph&gt;</span>
+</code></pre>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Delivery</strong></h3>
+<p>SYFF will be delivered in this repository.</p>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Project Plan / Usage</strong></h3>
+<h4><strong>To apply the SYFF:</strong></h4>
+<p>Planned:</p>
+<p><code>python3 '/syff.py' -s '/font.designspace' -c '/font.syff' --output-path '/adventpro-VF.ufo'</code></p>
+<hr/>
+<p>Current Test:</p>
+<p><code>python3 '/syff.py' -s '/demo.syff'</code></p>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Work Plan</strong></h3>
+<p>SYFF <strong>Work Plan</strong> is created outlining the activities, tasks, dependencies, and timeframes.</p>
+<ul>
+<li>Work Plan:
+<ul>
+<li>Tasks Assignments</li>
+<li>Dependencies</li>
+</ul></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Work Plan / Task Assignments</strong></h3>
+<ul>
+<li><strong>Docs Update</strong>:
+<ul>
+<li>VivaRado, Andreas Kalpakidis (∞1):</li>
+</ul></li>
+<li><strong>SYFF</strong>:
+<ul>
+<li>VivaRado, Andreas Kalpakidis (∞1):</li>
+</ul></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Work Plan / Dependencies</strong></h3>
+<p>SYFF currently has all the dependencies met for a successful delivery.</p>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Schedule Plan</strong></h3>
+<p>Overview:</p>
+<pre><img src="data:image/jpeg;base64,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ABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFAH51/tJ/8n/8A/BNP/u8j/wBUroVfk/F//J0fB/8A7yB/6zuGP6g8Kv8AlGv6V3/eC/8A1vcxP0Ur9YP5fCgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgDxjxv8C/CXj34wfA/wCNesaj4jtvFXwB/wCFl/8ACHafpt3pkPh/Uv8Ahanhe08J+If+EmtbrSLzUbz7Hp1nFNo39l6ro32e9aSS+/tGArbL89mXDWBzTP8AhviLEVcXDG8L/wBsf2fSo1KMcLW/tvBU8Di/rkJ0Klap7OjTjLD+wr4fkqNup7WNoL7zh/xDzrhvgjxB4BwOFyurk/iT/qn/AG5icXQxdTM8J/qdm9bOss/smtRxtDC0Pb4qvOnj/rmDx/tcOoww/wBVqJ1X7PX0J8GFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQB//9k="/></pre>
+<ul>
+<li>Current:
+<ul>
+<li><strike><strong>AEL-0001</strong> / from April 01 2022 to April 15 2022</strike>:
+<ul>
+<li><strong>Aeolus ∞1.000</strong>
+<ul>
+<li>Design of the first 9 letters of Aeolus</li>
+</ul></li>
+</ul></li>
+<li><strike><strong>SYFF-0001</strong> / from April 16 2022 to May 26 2022</strike>:
+<ul>
+<li><strong>Recombinator ∞1.000</strong></li>
+<li><strong>Copy ∞1.000</strong></li>
+<li><strong>Partials ∞1.000</strong></li>
+<li><strong>Fontex ∞1.000</strong></li>
+</ul></li>
+<li><strike><strong>SYFF-0002</strong> / from May 26 2022 to May 27 2022</strike>:
+<ul>
+<li><strong>SYFF Parsing ∞1.000</strong></li>
+</ul></li>
+<li><strike><strong>DOC-0001 ∞1.000</strong> / from May 27 2022 to May 31 2022</strike>:
+<ul>
+<li>Formulating the Documentation Structure</li>
+<li>Explaining the Alteration Functions</li>
+</ul></li>
+<li><strike><strong>SYFF-0003</strong> / from June 01 2022 to June 30 2022</strike>:
+<ul>
+<li>Implementing the Alteration Functions</li>
+</ul></li>
+<li><strong>SYFF-0004</strong> / from October 13 2022 to October 31 2022:
+<ul>
+<li>Implementing SVG to GLIF</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><small>Strike Through Equals Completion</small></p>
+<p>Task Codes:</p>
+<ul>
+<li>AEL-∞-∞: Aeolus Test Font</li>
+<li>SYFF-∞-∞: Synthetic Font Functions</li>
+<li>DOC-∞-∞: Documentation</li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Schedule Plan / Timeline</strong></h3>
+<ul>
+<li><strong>2022-05-27</strong>: After having the basic parts of the scripts in question and the required design files, we proceed to create the documentation and explore all the rest of the parts that need further development and refining.</li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Stakeholders</strong></h3>
+<p>We identify the <strong>Stakeholders</strong> by a <strong>Personnel Plan</strong> and create a <strong>Communication Plan</strong> to keep the <strong>Stakeholders</strong> informed.</p>
+<ul>
+<li><p><strong>Stakeholders</strong> Components:</p>
+<ul>
+<li>Applicable Stakeholders (Concious and Unconcious Entities):
+<ul>
+<li>clients</li>
+<li>personell</li>
+<li>funders</li>
+<li>suppliers</li>
+<li>equipment</li>
+</ul></li>
+<li>Glyph Design Team (GyT)</li>
+<li>Kern Testing Team (KeT)</li>
+<li>Quality Assurance Team (QaT)</li>
+<li>Programming Team (PgT)</li>
+</ul></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Stakeholders / Personnel Plan</strong></h3>
+<ul>
+<li>Personnel Plan
+<ul>
+<li>Organizational Structure
+<ul>
+<li>team members
+<ul>
+<li>internal
+<ul>
+<li>Andreas Kalpakidis (∞1)</li>
+<li>Madina Akhmatova (∞1)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Responsibilities and Qualifications
+<ul>
+<li>Project Management and Accounting: Madina Akhmatova (∞1)</li>
+<li>Planning, Development and Design: Andreas Kalpakidis (∞1)</li>
+</ul></li>
+</ul></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Stakeholders / Communication Plan</strong></h3>
+<ul>
+<li>Communication Plan
+<ul>
+<li>Stakeholder Feedback Mechanisms
+<ul>
+<li>Weekly Notifications
+<ul>
+<li>Twitter</li>
+<li>LinkedIn</li>
+</ul></li>
+</ul></li>
+<li>User Feedback Mechanisms:
+<ul>
+<li><a href="mailto:support@vivarado.com" rel="noopener" target="_blank">support@vivarado.com</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Quality Plan</strong></h3>
+<p>A <strong>Quality Plan</strong> describes the activities, standards, tools and processes necessary to achieve quality in the delivery of a project.</p>
+<p>We can now create a <strong>Quality Plan</strong> by identifying the valid <strong>Quality Targets</strong> we want to achieve. Identify the <strong>Quality Policies</strong> that will be required to achieve them. Identify how to do <strong>Quality Measurement</strong>. Lastly identify how to maintain quality with <strong>Quality Management</strong>.</p>
+<ul>
+<li><p><strong>Quality Plan (PQP)</strong> Components:</p>
+<ol>
+<li>Quality Targets</li>
+<li>Quality Management</li>
+</ol></li>
+</ul>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Quality Plan / Quality Targets</strong></h3>
+<p><strong>Quality Targets</strong> we want to achieve and what are their <strong>Acceptance Criteria</strong>, <strong>Quality Management Procedures</strong>, for each <strong>Applicable Category</strong></p>
+<ol>
+<li>Quality Targets Components:
+<ul>
+<li>Acceptance criteria</li>
+<li>Quality Management procedures</li>
+</ul></li>
+</ol>
+<hr/>
+<h3><strong>Introduction / Phase Introduction / Planning Phase / Quality Plan / Quality Management</strong></h3>
+<p><strong>Quality Management</strong>, the nature of the <strong>Audits</strong>, <strong>Work Verification</strong> by assigning responsible personnel for <strong>Task Fulfillment</strong> and <strong>Task Checking</strong>.</p>
+<ol>
+<li>Quality Management
+<ul>
+<li>Audits</li>
+<li>Tool Scheduling</li>
+<li>Work Verification
+<ul>
+<li>Task fulfillment responsible personnel 
+<ul>
+<li>VivaRado</li>
+</ul></li>
+<li>Task checking responsible personnel
+<ul>
+<li>VivaRado</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ol>
+<hr/>
+<h3><strong>Glossary</strong></h3>
+<p><strong>SYFF</strong>: SYFF (Synthetic Font Functions), IPA: [/saɪff/ &gt;= /sɪff/].</p>
+<hr/>
+<h3><strong>Reference</strong></h3>
+<p>CSSUtils: <a href="https://pypi.org/project/cssutils/" rel="noopener" target="_blank">cssutils on pypi.org</a></p>
+<hr/>
